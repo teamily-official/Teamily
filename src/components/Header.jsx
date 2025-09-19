@@ -1,21 +1,21 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import CssBaseline from "@mui/material/CssBaseline";
+import Divider from "@mui/material/Divider";
+import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import MenuIcon from "@mui/icons-material/Menu";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
 
-const drawerWidth = 240;
-const navItems = ['Home', 'About','Services', 'Contact'];
+const drawerWidth = 180;
+const navItems = ["Home", "About", "Services", "Contact"];
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -25,15 +25,29 @@ export function Header() {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+      <Typography variant="h6" sx={{ my: 2, color: "#1976d2" }}>
         TEAMILY
       </Typography>
       <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
+            <ListItemButton
+              sx={{
+                textAlign: "center",
+                color: "#000",
+                "&:hover": {
+                  color: "#1976d2",
+                  textDecoration: "underline",
+                },
+                "&.Mui-selected": {
+                  color: "#1976d2",
+                  textDecoration: "underline",
+                },
+              }}
+              selected={false}
+            >
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
@@ -46,41 +60,54 @@ export function Header() {
   //   window !== undefined ? () => window().document.body : undefined;
 
   return (
-    
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar component="nav" sx={{ backgroundColor: "#FFF" }}>
         <Toolbar>
           {/* Mobile Menu Button */}
           <IconButton
-            color="inherit"
+            color="default"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ mr: 2, display: { sm: "none" } }}
           >
             <MenuIcon />
           </IconButton>
 
           {/* Logo / Title */}
-        <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
-      <img 
-  src="/src/assets/image/Teamlogo.png"
-  alt="Logo" 
-  style={{ 
-    height: '40px', 
-    cursor: 'pointer',
-    mixBlendMode: 'multiply'
-  }}
-/>
-
-         </Box>
-
+          <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
+            <img
+              src="/src/assets/image/Teamlogo.png"
+              alt="Logo"
+              style={{
+                height: "95px",
+                width: "180px",
+                cursor: "pointer",
+                mixBlendMode: "multiply",
+              }}
+            />
+          </Box>
 
           {/* Desktop Navigation */}
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
+              <Button
+                key={item}
+                sx={{
+                  textAlign: "center",
+                  color: "#000",
+                  "&:hover": {
+                    color: "#000080",
+                    textDecoration: "underline",
+                  },
+                  "&.Mui-selected": {
+                    color: "#000080",
+                    textDecoration: "underline",
+                  },
+                }}
+                selected={false}
+              >
                 {item}
               </Button>
             ))}
@@ -99,9 +126,9 @@ export function Header() {
             keepMounted: true, // Better mobile performance
           }}
           sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': {
-              boxSizing: 'border-box',
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
               width: drawerWidth,
             },
           }}
@@ -113,7 +140,6 @@ export function Header() {
       {/* Page Content */}
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
-     
       </Box>
     </Box>
   );

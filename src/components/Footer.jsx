@@ -1,78 +1,114 @@
-
-export function Footer(){
-    return(
-<footer class="bg-white dark:bg-gray-900">
-    <div class="mx-auto w-full">
-      <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
-        <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                <li class="mb-4">
-                    <a href="#" class=" hover:underline">About</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Careers</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Brand Center</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Blog</a>
-                </li>
+export function Footer() {
+  return (
+    <footer class="bg-blue-900">
+      <div class="mx-auto w-full">
+        <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+          <div>
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              Company
+            </h2>
+            <ul class="text-white dark:text font-medium">
+              <li class="mb-4">
+                <a href="#" class=" hover:underline">
+                  About
+                </a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">
+                  Careers
+                </a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">
+                  Brand Center
+                </a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">
+                  Blog
+                </a>
+              </li>
             </ul>
-        </div>
-        <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help center</h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Discord Server</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Twitter</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Facebook</a>
-                </li>
-              
+          </div>
+          <div>
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              Help center
+            </h2>
+            <ul class="text-amber-50 dark:text-amber-50 font-medium">
+              <li class="mb-4">
+                <a href="#" class="hover:underline ">
+                  Discord Server
+                </a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">
+                  Twitter
+                </a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">
+                  Facebook
+                </a>
+              </li>
             </ul>
-        </div>
-        <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Services</h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">ios App Development</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Android App Development</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Software Development</a>
-                </li>
-                  <li class="mb-4">
-                    <a href="#" class="hover:underline">Website Development</a>
-                </li>
+          </div>
+          <div>
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              Services
+            </h2>
+            <ul class="text-white dark:text font-medium">
+              <li class="mb-4">
+                <a href="#" class="hover:underline">
+                  ios App Development
+                </a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">
+                  Android App Development
+                </a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">
+                  Software Development
+                </a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">
+                  Website Development
+                </a>
+              </li>
             </ul>
-        </div>
-        <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contact</h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">E-Mail</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Contact-Number</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Address</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Website</a>
-                </li>
+          </div>
+          <div>
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              Contact
+            </h2>
+            <ul class="text-white font-medium">
+              <li class="mb-4 text-white">
+                <a href="#" class="hover:underline text-white">
+                  E-Mail
+                </a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">
+                  Contact-Number
+                </a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">
+                  Address
+                </a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">
+                  Website
+                </a>
+              </li>
             </ul>
+          </div>
         </div>
-    </div>
-    <div class="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
-        <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2023 <a href="https://flowbite.com/">Flowbite™</a>. All Rights Reserved.
+        {/* <div class="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
+        <span class="text-sm text-white dark:text sm:text-center">© 2023 <a href="https://flowbite.com/">Flowbite™</a>. All Rights Reserved.
         </span>
         <div class="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
             <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
@@ -106,9 +142,8 @@ export function Footer(){
                   <span class="sr-only">Dribbble account</span>
               </a>
         </div>
+      </div> */}
       </div>
-    </div>
-</footer>
-
-    )
+    </footer>
+  );
 }
