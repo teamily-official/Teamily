@@ -1,6 +1,8 @@
 import './App.css'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
+import HeroSection from './components/HeroSection'
+import FeatureSection from './components/FeatureSection'
 
 function App() {
   return (
@@ -9,7 +11,8 @@ function App() {
 
       {/* Page content */}
       <main style={{ flex: 1 }}>
-        {/* Add your page content here */}
+        <HeroSection/>
+       <FeatureSection/>
       </main>
    <div style={{width: '215vh' }}>
       <Footer />
