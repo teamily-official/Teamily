@@ -1,6 +1,8 @@
-import "./App.css";
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
+import './App.css'
+import { Header } from './components/Header'
+import { Footer } from './components/Footer'
+import HeroSection from './components/HeroSection'
+import FeatureSection from './components/FeatureSection'
 import { LogosSection } from "./components/LogosSection";
 import { ProcessSection } from "./components/ProcessSection";
 
@@ -13,6 +15,8 @@ function App() {
 
       {/* Page content */}
       <main style={{ flex: 1 }}>
+        <HeroSection/>
+       <FeatureSection/>
         <LogosSection />
         <ProcessSection />
         {/* Add your page content here */}
