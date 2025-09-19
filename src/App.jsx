@@ -5,6 +5,7 @@ import HeroSection from './components/HeroSection'
 import FeatureSection from './components/FeatureSection'
 import { LogosSection } from "./components/LogosSection";
 import { ProcessSection } from "./components/ProcessSection";
+import { ServicesSection } from './components/ServiceSection'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       {/* Page content */}
       <main style={{ flex: 1 }}>
         <HeroSection/>
+        <ServicesSection/>
        <FeatureSection/>
         <LogosSection />
         <ProcessSection />
