@@ -30,40 +30,57 @@ export function Header() {
         TEAMILY
       </Typography>
       <Divider />
+
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton
               sx={{
                 textAlign: "center",
-                color: "#000",
+                fontWeight: "bold",
+                color: "#0080d3",
                 "&:hover": {
                   color: "#1976d2",
-                  textDecoration: "underline",
                 },
                 "&.Mui-selected": {
                   color: "#1976d2",
-                  textDecoration: "underline",
                 },
               }}
-              selected={false}
+              selected={false} // agar true kare to selected color dikhega
             >
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
+
+      {/* Mobile Drawer Get Button */}
+      <Button
+        variant="contained"
+        sx={{
+          mt: 2,
+          backgroundColor: "#1976d2",
+          "&:hover": {
+            backgroundColor: "#000080",
+          },
+        }}
+      >
+        Get
+      </Button>
     </Box>
   );
-
-  // const container =
-  //   window !== undefined ? () => window().document.body : undefined;
 
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{ backgroundColor: "#FFF" }}>
-        <Toolbar>
+      <AppBar component="nav" sx={{ backgroundColor: "#FFF" }} elevation={0}>
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
           {/* Mobile Menu Button */}
           <IconButton
             color="default"
@@ -76,7 +93,7 @@ export function Header() {
           </IconButton>
 
           {/* Logo / Title */}
-          <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
+          <Box sx={{ display: { xs: "none", sm: "block" }, mr: ["15rem"] }}>
             <img
               src="/src/assets/image/Teamlogo.png"
               alt="Logo"
@@ -90,13 +107,14 @@ export function Header() {
           </Box>
 
           {/* Desktop Navigation */}
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box sx={{ display: { xs: "none", sm: "flex" }, gap: "3rem" }}>
             {navItems.map((item) => (
               <Button
                 key={item}
                 sx={{
                   textAlign: "center",
-                  color: "#000",
+                  fontSize: "16px",
+                  color: "#0080d3",
                   "&:hover": {
                     color: "#000080",
                     textDecoration: "underline",
@@ -112,13 +130,26 @@ export function Header() {
               </Button>
             ))}
           </Box>
+
+          {/* Desktop Get Button */}
+          <Button
+            variant="contained"
+            sx={{
+              ml: 2,
+              backgroundColor: "#0081CD",
+              "&:hover": {
+                backgroundColor: "#000080",
+              },
+            }}
+          >
+            Get contct
+          </Button>
         </Toolbar>
       </AppBar>
 
       {/* Mobile Drawer */}
       <nav>
         <Drawer
-          // container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
