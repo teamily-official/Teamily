@@ -142,7 +142,7 @@ export function Header() {
               },
             }}
           >
-            Get contct
+            Get Contact
           </Button>
         </Toolbar>
       </AppBar>
