@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 export default function FeatureSection() {
   return (
     <div>
-        <section className="bg-white py-20 px-6">
+      <section className="bg-white py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-navy mb-12">
             Why Choose Teamily?
@@ -25,7 +25,9 @@ export default function FeatureSection() {
             ].map((feature, i) => (
               <div
                 key={i}
-                className="p-6 bg-neutral rounded-xl shadow hover:shadow-lg hover:border-[#0080cb] hover:border transition hover:text-[#0080cb]"
+                className="p-6 bg-neutral rounded-xl shadow border border-black
+                 hover:shadow-lg hover:border-[#0080cb] hover:border transition
+                  hover:text-[#0080cb]"
               >
                 <h3 className="text-xl font-semibold text-navy mb-3 ">
                   {feature.title}
@@ -37,5 +39,5 @@ export default function FeatureSection() {
         </div>
       </section>
     </div>
-  )
+  );
 }
