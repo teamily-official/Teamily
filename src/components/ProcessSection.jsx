@@ -68,7 +68,9 @@ export function ProcessSection() {
                 {step.icon}
               </div>
 
-              <p className="mt-3 text-white font-medium">{step.title}</p>
+              <p className="mt-3 text-white text-[1rem] 2xl:text-[1.2vw] font-medium">
+                {step.title}
+              </p>
 
               {/* Glowing connecting line */}
               {index < steps.length - 1 && (

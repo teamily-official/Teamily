@@ -18,27 +18,27 @@ export function Footer() {
 
           {/* Company Links */}
           <div>
-            <h2 className="mb-4 text-sm font-semibold text-black uppercase">
+            <h2 className="mb-4 text-[1rem] 2xl:text-[1.2vw] font-semibold text-black uppercase">
               Company
             </h2>
             <ul className="space-y-2 text-[#0080d3] font-medium">
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
                   About
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
                   Service
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
                   Our Work
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
                   Blog
                 </a>
               </li>
@@ -47,27 +47,27 @@ export function Footer() {
 
           {/* Contact Links */}
           <div>
-            <h2 className="mb-4 text-sm font-semibold text-black uppercase">
+            <h2 className="mb-4 text-[1rem] 2xl:text-[1.2vw] font-semibold text-black uppercase">
               Contact
             </h2>
             <ul className="space-y-2 text-[#0080d3] font-medium">
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
                   E-Mail
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
                   Contact Number
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
                   Address
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
                   Website
                 </a>
               </li>
@@ -76,27 +76,27 @@ export function Footer() {
 
           {/* Services / Help */}
           <div>
-            <h2 className="mb-4 text-sm font-semibold text-black uppercase">
+            <h2 className="mb-4 text-[1rem] 2xl:text-[1.2vw] font-semibold text-black uppercase">
               Services
             </h2>
             <ul className="space-y-2 text-[#0080d3] font-medium">
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
                   iOS App Development
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
                   Android App Development
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
                   Software Development
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
                   Website Development
                 </a>
               </li>

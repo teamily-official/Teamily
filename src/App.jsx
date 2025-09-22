@@ -9,7 +9,7 @@ import { LogosSection } from "./components/LogosSection";
 import { ProcessSection } from "./components/ProcessSection";
 import { ServicesSection } from "./components/ServiceSection";
 // eslint-disable-next-line no-unused-vars
-import { motion as m } from "framer-motion"; // 👈 motion alias to fix ESLint
+import { motion as m } from "framer-motion"; 
 
 function App() {
   const fadeUp = {

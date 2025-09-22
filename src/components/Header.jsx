@@ -11,20 +11,20 @@ export function Header() {
   };
 
   return (
-    <header className="w-[27rem] md:w-[48rem] lg:w-full bg-white shadow-md fixed top-0 left-0 z-50">
+    <header className="w-full 2xl:h-[7vw]  bg-white shadow-md fixed top-0 left-0 z-50">
       <div className=" px-4 sm:px-6 lg:px-8">
-        <div className="h-24 flex items-center justify-between">
+        <div className="h-24 2xl:top-[3vw] flex items-center justify-between">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 w-[12rem] h-[6rem] 2xl:w-[10vw] 2xl:h-[10vw]">
             <img
               src="/src/assets/image/Teamlogo.png"
               alt="Logo"
-              className="h-16 sm:h-20 cursor-pointer"
+              className="w-full h-full cursor-pointer"
             />
           </div>
 
           {/* Desktop Nav */}
-          <nav className="hidden sm:flex gap-10">
+          <nav className="hidden sm:flex gap-10 text-[1rem] 2xl:text-[1.2vw]">
             {navItems.map((item) => (
               <a
                 key={item}
@@ -38,7 +38,7 @@ export function Header() {
 
           {/* Get Contact Button (desktop only) */}
           <div className="hidden sm:block">
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-800 whitespace-nowrap">
+            <button className="bg-blue-600 text-white text-[1rem] 2xl:text-[1.2vw] px-6 py-2 rounded-md hover:bg-blue-800 whitespace-nowrap">
               Get Contact
             </button>
           </div>

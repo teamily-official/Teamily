@@ -141,7 +141,7 @@ export function ServicesSection() {
   return (
     <div className="bg-white py-12 px-6">
       <h2
-        className="text-3xl font-bold text-center text-[#000] mb-10 
+        className="text-3xl 2xl:text-[1.5vw] font-bold text-center text-[#000] mb-10 
                transition-transform duration-300 hover:scale-110"
       >
         Our Services
@@ -152,11 +152,15 @@ export function ServicesSection() {
             key={index}
             className="bg-[#0080d3] text-white p-6 rounded-2xl shadow-lg 
             transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl
-             hover:border-2 hover:border-black"
+             hover:border-2 hover:border-black "
           >
             {service.icon}
-            <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-            <p className="text-[1rem] leading-relaxed">{service.description}</p>
+            <h3 className="text-xl 2xl:text-[1.3vw] font-semibold mb-3">
+              {service.title}
+            </h3>
+            <p className="text-[1rem] 2xl:text-[1.1vw] leading-relaxed">
+              {service.description}
+            </p>
           </div>
         ))}
       </div>
