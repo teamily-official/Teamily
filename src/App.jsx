@@ -9,7 +9,9 @@ import { LogosSection } from "./components/LogosSection";
 import { ProcessSection } from "./components/ProcessSection";
 import { ServicesSection } from "./components/ServiceSection";
 // eslint-disable-next-line no-unused-vars
-import { motion as m } from "framer-motion"; 
+import { motion as m } from "framer-motion";
+import SplashCursor from "./reusable/SplashCursor";
+import { About } from "./components/About";
 
 function App() {
   const fadeUp = {
@@ -65,16 +67,15 @@ function App() {
         >
           <ServicesSection />
         </m.div>
-
-        {/* Feature Section */}
+        {/* About Section */}
         <m.div
           initial="hidden"
           whileInView="visible"
           variants={fadeUp}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: false }}
         >
-          <FeatureSection />
+          <About />
         </m.div>
 
         {/* Logos Section */}
@@ -86,6 +87,17 @@ function App() {
           viewport={{ once: false }}
         >
           <LogosSection />
+        </m.div>
+
+        {/* Feature Section */}
+        <m.div
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeUp}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: false }}
+        >
+          <FeatureSection />
         </m.div>
 
         {/* Process Section */}
@@ -111,6 +123,7 @@ function App() {
       >
         <Footer />
       </m.div>
+      <SplashCursor />
     </div>
   );
 }

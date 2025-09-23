@@ -161,8 +161,14 @@ export default function HeroSection() {
   return (
     <div
       ref={containerRef}
-      className="relative  w-full h-[70vh] sm:h-[75vh] md:h-[80vh] lg:h-[90vh] xl:h-screen 2xl:h-screen bg-[#001f3f] text-white flex items-center justify-center overflow-hidden"
+      className="relative w-full h-[70vh] sm:h-[75vh] md:h-[80vh] lg:h-[90vh] xl:h-screen 2xl:h-screen 
+               bg-[#001f3f] text-white flex items-center justify-center overflow-hidden" // 👈 overflow-hidden
     >
+      {/* Canvas absolute kar do taaki scroll na banaye */}
+      <div className="absolute inset-0">
+        {/* OGL canvas yaha append hota hai */}
+      </div>
+
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-10 lg:px-20">
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
