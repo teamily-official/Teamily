@@ -1,4 +1,3 @@
-// src/components/ProcessSection.jsx
 import React from "react";
 import { FaSearch, FaRocket, FaPhoneAlt } from "react-icons/fa";
 import { MdAnalytics } from "react-icons/md";
@@ -12,84 +11,94 @@ export function ProcessSection() {
     {
       icon: <MdAnalytics className="text-4xl text-white" />,
       title: "Analysis",
-      direction: "left",
     },
-    {
-      icon: <FaSearch className="text-4xl text-white" />,
-      title: "Search",
-      direction: "right",
-    },
+    { icon: <FaSearch className="text-4xl text-white" />, title: "Search" },
     {
       icon: <BiCodeAlt className="text-4xl text-white" />,
       title: "Development",
-      direction: "left",
     },
     {
       icon: <AiOutlineReload className="text-4xl text-white" />,
       title: "Implementation",
-      direction: "right",
     },
-    {
-      icon: <FaRocket className="text-4xl text-white" />,
-      title: "Delivery",
-      direction: "left",
-    },
-    {
-      icon: <FaPhoneAlt className="text-4xl text-white" />,
-      title: "Support",
-      direction: "right",
-    },
+    { icon: <FaRocket className="text-4xl text-white" />, title: "Delivery" },
+    { icon: <FaPhoneAlt className="text-4xl text-white" />, title: "Support" },
   ];
 
-  // Animation variants
-  const itemVariants = {
-    hiddenLeft: { opacity: 0, x: -200 }, // left se aur door
-    hiddenRight: { opacity: 0, x: 200 }, // right se aur door
-    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
-  };
-
   return (
-    <section className="bg-[#0080d3] text-black py-16">
+    <section className="bg-[#0080d3] py-16">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold">
-          Our Tech-Savvy <span className="text-[#FFF]">Process</span>
+        <h2 className="text-3xl md:text-4xl font-bold text-white">
+          Our Tech-Savvy <span className="text-[#00ffff]">Process</span>
         </h2>
-        <p className="text-gray-300 mt-4 max-w-3xl mx-auto">
-          At Teamily, efficiency isn’t just a goal—it’s our standard. With a
-          flexible, time-driven IT delivery process, we ensure seamless
-          execution, hitting every deadline with precision while fueling
-          innovation at every stage. In technology, timing isn’t just
-          important—it defines success.
-        </p>
 
         {/* Steps */}
         <div className="mt-16 flex flex-wrap justify-center gap-20 relative">
           {steps.map((step, index) => (
-            <motion.div
-              key={index}
-              className="flex flex-col items-center relative"
-              initial={step.direction === "left" ? "hiddenLeft" : "hiddenRight"}
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.5 }}
-              variants={itemVariants}
-            >
-              {/* Circle */}
-              <div
-                className="w-24 h-24 flex items-center justify-center rounded-full border-2 
-                border-dashed border-amber-50"
-              >
+            <div key={index} className="flex flex-col items-center relative">
+              {/* Circle with glowing moving light */}
+              <svg className="w-24 h-24">
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="46%"
+                  stroke="#ffffff33"
+                  strokeWidth="4"
+                  fill="none"
+                />
+                <motion.circle
+                  cx="50%"
+                  cy="50%"
+                  r="46%"
+                  stroke="#00ffff"
+                  strokeWidth="4"
+                  fill="none"
+                  strokeDasharray="10 290"
+                  animate={{ strokeDashoffset: [0, -300] }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 2,
+                    ease: "linear",
+                  }}
+                  style={{ filter: "drop-shadow(0 0 6px #00ffff)" }}
+                />
+              </svg>
+
+              <div className="absolute inset-0 -top-8 flex items-center justify-center text-white">
                 {step.icon}
               </div>
-              <p className="mt-3 text-[#FFF] font-medium">{step.title}</p>
 
-              {/* Dotted Line (except last) */}
+              <p className="mt-3 text-white text-[1rem] 2xl:text-[1.2vw] font-medium">
+                {step.title}
+              </p>
+
+              {/* Glowing connecting line */}
               {index < steps.length - 1 && (
-                <div
-                  className="hidden md:block absolute top-12 left-[100px] w-20
-                   border-t-2 border-dashed border-amber-50"
-                ></div>
+                <svg
+                  className="hidden md:block absolute top-12 left-[100px] w-20 h-1"
+                  viewBox="0 0 80 4"
+                  fill="none"
+                >
+                  <motion.line
+                    x1="0"
+                    y1="2"
+                    x2="80"
+                    y2="2"
+                    stroke="#00ffff"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeDasharray="8 8"
+                    animate={{ strokeDashoffset: [16, 0] }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: 1.5,
+                      ease: "linear",
+                    }}
+                    style={{ filter: "drop-shadow(0 0 8px #00ffff)" }}
+                  />
+                </svg>
               )}
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

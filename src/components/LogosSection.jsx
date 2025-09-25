@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
 export function LogosSection() {
   const [isPaused, setIsPaused] = useState(false);
@@ -28,10 +30,6 @@ export function LogosSection() {
       src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg",
       alt: "Git",
     },
-    // {
-    //   src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-plain.svg",
-    //   alt: "TailwindCSS",
-    // },
     {
       src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg",
       alt: "Docker",
@@ -42,24 +40,35 @@ export function LogosSection() {
     },
   ];
 
+  // duplicate logos for smooth scrolling
+  const scrollingLogos = [...logos, ...logos];
+
   return (
-    <div className="overflow-hidden whitespace-nowrap w-full bg-white py-6 px-8">
-      <div
-        className={`flex items-center gap-12 ${
-          isPaused ? "animate-none" : "animate-marquee"
-        }`}
+    <div className="overflow-hidden w-full bg-[#0080cb] py-6 px-8">
+      <motion.div
+        className="flex items-center gap-12"
+        animate={{ x: isPaused ? 0 : ["0%", "-50%"] }}
+        transition={{
+          x: {
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: 15,
+            ease: "linear",
+          },
+        }}
       >
-        {logos.concat(logos).map((logo, index) => (
-          <img
+        {scrollingLogos.map((logo, index) => (
+          <motion.img
             key={index}
             src={logo.src}
             alt={logo.alt}
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
-            className="h-24 w-auto object-contain transition-all duration-300 hover:scale-110 hover:brightness-0 hover:invert hover:sepia hover:saturate-200 hover:hue-rotate-180 hover:[filter:drop-shadow(0_0_0_#1976d2)] cursor-pointer"
+            className="h-24 w-auto object-contain cursor-pointer"
+            whileHover={{ scale: 1.1 }}
           />
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

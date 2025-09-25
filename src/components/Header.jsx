@@ -1,177 +1,95 @@
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+// src/components/Header.jsx
+import React, { useState } from "react";
 
-const drawerWidth = 180;
 const navItems = ["Home", "About", "Services", "Contact"];
 
 export function Header() {
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  const handleDrawerToggle = () => {
-    setMobileOpen((prev) => !prev);
+  const toggleMobileMenu = () => {
+    setMobileOpen(!mobileOpen);
   };
 
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2, color: "#1976d2" }}>
-        TEAMILY
-      </Typography>
-      <Divider />
-
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton
-              sx={{
-                textAlign: "center",
-                fontWeight: "bold",
-                color: "#0080d3",
-                "&:hover": {
-                  color: "#1976d2",
-                },
-                "&.Mui-selected": {
-                  color: "#1976d2",
-                },
-              }}
-              selected={false} // agar true kare to selected color dikhega
-            >
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-
-      {/* Mobile Drawer Get Button */}
-      <Button
-        variant="contained"
-        sx={{
-          mt: 2,
-          backgroundColor: "#1976d2",
-          "&:hover": {
-            backgroundColor: "#000080",
-          },
-        }}
-      >
-        Get
-      </Button>
-    </Box>
-  );
-
   return (
-    <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <AppBar component="nav" sx={{ backgroundColor: "#FFF" }} elevation={0}>
-        <Toolbar
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          {/* Mobile Menu Button */}
-          <IconButton
-            color="default"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
-
-          {/* Logo / Title */}
-          <Box sx={{ display: { xs: "none", sm: "block" }, mr: ["15rem"] }}>
+    <header className="w-full 2xl:h-[7vw]  bg-white shadow-md fixed top-0 left-0 z-50">
+      <div className=" px-4 sm:px-6 lg:px-8">
+        <div className="h-24 2xl:top-[3vw] flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex-shrink-0 w-[12rem] h-[6rem] 2xl:w-[10vw] 2xl:h-[10vw]">
             <img
               src="/src/assets/image/Teamlogo.png"
               alt="Logo"
-              style={{
-                height: "95px",
-                width: "180px",
-                cursor: "pointer",
-                mixBlendMode: "multiply",
-              }}
+              className="w-full h-full cursor-pointer"
             />
-          </Box>
+          </div>
 
-          {/* Desktop Navigation */}
-          <Box sx={{ display: { xs: "none", sm: "flex" }, gap: "3rem" }}>
+          {/* Desktop Nav */}
+          <nav className="hidden sm:flex gap-10 text-[1rem] 2xl:text-[1.2vw]">
             {navItems.map((item) => (
-              <Button
+              <a
                 key={item}
-                sx={{
-                  textAlign: "center",
-                  fontSize: "16px",
-                  color: "#0080d3",
-                  "&:hover": {
-                    color: "#000080",
-                    textDecoration: "underline",
-                  },
-                  "&.Mui-selected": {
-                    color: "#000080",
-                    textDecoration: "underline",
-                  },
-                }}
-                selected={false}
+                href={`#${item.toLowerCase()}`}
+                className="text-blue-600 font-semibold hover:text-blue-800"
               >
                 {item}
-              </Button>
+              </a>
             ))}
-          </Box>
+          </nav>
 
-          {/* Desktop Get Button */}
-          <Button
-            variant="contained"
-            sx={{
-              ml: 2,
-              backgroundColor: "#0081CD",
-              "&:hover": {
-                backgroundColor: "#000080",
-              },
-            }}
+          {/* Get Contact Button (desktop only) */}
+          <div className="hidden sm:block">
+            <button className="bg-blue-600 text-white text-[1rem] 2xl:text-[1.2vw] px-6 py-2 rounded-md hover:bg-blue-800 whitespace-nowrap">
+              Get Contact
+            </button>
+          </div>
+
+          {/* Hamburger for mobile */}
+          <button
+            className="sm:hidden text-blue-600 focus:outline-none"
+            onClick={toggleMobileMenu}
           >
-            Get Contact
-          </Button>
-        </Toolbar>
-      </AppBar>
+            <svg
+              className="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
 
-      {/* Mobile Drawer */}
-      <nav>
-        <Drawer
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better mobile performance
-          }}
-          sx={{
-            display: { xs: "block", sm: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-            },
-          }}
-        >
-          {drawer}
-        </Drawer>
-      </nav>
-
-      {/* Page Content */}
-      <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
-      </Box>
-    </Box>
+      {/* Mobile Menu */}
+      {mobileOpen && (
+        <div className="sm:hidden bg-white shadow-md w-full absolute top-24 left-0">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <ul className="flex flex-col items-center py-4 gap-4">
+              {navItems.map((item) => (
+                <li key={item}>
+                  <a
+                    href={`#${item.toLowerCase()}`}
+                    className="text-blue-600 font-semibold hover:text-blue-800"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
+              <li>
+                <button className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-800">
+                  Get Contact
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      )}
+    </header>
   );
 }
