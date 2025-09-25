@@ -1,5 +1,6 @@
 // src/components/Footer.jsx
 import React from "react";
+import logo from "../../public/image/Teamlogo.png";
 
 export function Footer() {
   return (
@@ -9,7 +10,7 @@ export function Footer() {
           {/* Logo Section */}
           <div className="flex flex-col items-start space-y-4">
             <img
-              src="/src/assets/image/Teamlogo.png"
+              src={logo}
               alt="TeamILy Logo"
               className="w-40 sm:w-48 object-contain"
             />
