@@ -1,6 +1,6 @@
 // src/components/Header.jsx
 import { useState } from "react";
-import image from "/src/assets/image/Teamlogo.png";
+import logo from "@/public/logo.png";
 const navItems = ["Home", "About", "Services", "Contact"];
 
 export function Header() {
@@ -17,7 +17,7 @@ export function Header() {
           {/* Logo */}
           <div className="flex-shrink-0 w-[12rem] h-[6rem] 2xl:w-[10vw] 2xl:h-[10vw]">
             <img
-              src={image}
+              src={logo}
               alt="Logo"
               className="w-full h-full cursor-pointer"
             />
