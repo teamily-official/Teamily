@@ -24,7 +24,7 @@ function App() {
       <Header />
 
       {/* Main content */}
-      <main className="flex-1 w-full">
+      <main>
         {/* Hero Section */}
         <m.div
           initial="hidden"
