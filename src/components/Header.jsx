@@ -1,6 +1,6 @@
 // src/components/Header.jsx
 import { useState } from "react";
-import logo from "@/public/logo.png";
+import logo from "../../public/image/Teamlogo.png";
 const navItems = ["Home", "About", "Services", "Contact"];
 
 export function Header() {
