@@ -162,27 +162,32 @@ export default function HeroSection() {
     <div
       ref={containerRef}
       className="relative w-full h-[70vh] sm:h-[75vh] md:h-[80vh] lg:h-[90vh] xl:h-screen 2xl:h-screen 
-               bg-[#001f3f] text-white flex items-center justify-center overflow-hidden" // 👈 overflow-hidden
+             bg-[#001f3f] text-white flex items-center justify-center overflow-hidden"
+      // 👆 overflow-hidden पहले से लगा है (कोई extra scroll नहीं आएगा)
     >
-      {/* Canvas absolute kar do taaki scroll na banaye */}
-      <div className="absolute inset-0">
-        {/* OGL canvas yaha append hota hai */}
-      </div>
+      <div className="absolute inset-0 pointer-events-none"></div>
+      {/* 👆 अब अंदर का canvas pointer events नहीं लेगा */}
 
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-10 lg:px-20">
+      <div
+        className="absolute inset-0 flex flex-col items-center justify-center text-center 
+                    px-4 sm:px-6 md:px-10 lg:px-20 overflow-hidden"
+      >
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold mb-6 cursor-pointer leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl 
+                   font-bold mb-6 cursor-pointer leading-tight"
         >
           Your Vision, Our Technology
         </motion.h1>
+
         <motion.p
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
-          className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-gray-300 max-w-xl sm:max-w-2xl md:max-w-3xl mb-8 cursor-pointer leading-relaxed"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 
+                   text-gray-300 max-w-xl sm:max-w-2xl md:max-w-3xl mb-8 cursor-pointer leading-relaxed"
         >
           Collaborate smarter, grow faster, and achieve more together with
           Teamily’s modern platform.

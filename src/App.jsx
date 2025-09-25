@@ -1,6 +1,5 @@
 // src/App.jsx
 import "./App.css";
-import { useEffect } from "react";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import HeroSection from "./components/HeroSection";
@@ -18,26 +17,6 @@ function App() {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
   };
-
-  useEffect(() => {
-    if ("scrollRestoration" in window.history) {
-      window.history.scrollRestoration = "manual";
-    }
-
-    const saveScroll = () => {
-      sessionStorage.setItem("scrollPos", window.scrollY);
-    };
-    window.addEventListener("beforeunload", saveScroll);
-
-    const scrollPos = sessionStorage.getItem("scrollPos");
-    if (scrollPos) {
-      window.scrollTo(0, parseInt(scrollPos));
-    }
-
-    return () => {
-      window.removeEventListener("beforeunload", saveScroll);
-    };
-  }, []);
 
   return (
     <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
@@ -67,6 +46,7 @@ function App() {
         >
           <ServicesSection />
         </m.div>
+
         {/* About Section */}
         <m.div
           initial="hidden"
