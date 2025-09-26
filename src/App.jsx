@@ -9,7 +9,7 @@ import { ProcessSection } from "./components/ProcessSection";
 import { ServicesSection } from "./components/ServiceSection";
 // eslint-disable-next-line no-unused-vars
 import { motion as m } from "framer-motion";
-// import SplashCursor from "./reusable/SplashCursor";
+import SplashCursor from "./reusable/SplashCursor";
 import { About } from "./components/About";
 
 function App() {
@@ -103,7 +103,7 @@ function App() {
       >
         <Footer />
       </m.div>
-      {/* <SplashCursor /> */}
+      <SplashCursor />
     </div>
   );
 }
