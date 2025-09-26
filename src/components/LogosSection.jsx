@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
@@ -40,11 +40,10 @@ export function LogosSection() {
     },
   ];
 
-  // duplicate logos for smooth scrolling
   const scrollingLogos = [...logos, ...logos];
 
   return (
-    <div className="overflow-hidden w-full bg-[#0080cb] py-6 px-8">
+    <section className="w-full bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 py-8 overflow-hidden">
       <motion.div
         className="flex items-center gap-12"
         animate={{ x: isPaused ? 0 : ["0%", "-50%"] }}
@@ -64,11 +63,12 @@ export function LogosSection() {
             alt={logo.alt}
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
-            className="h-24 w-auto object-contain cursor-pointer"
+            className="h-16 sm:h-20 md:h-24 w-auto object-contain cursor-pointer"
             whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.3 }}
           />
         ))}
       </motion.div>
-    </div>
+    </section>
   );
 }
