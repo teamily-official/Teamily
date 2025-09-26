@@ -1,14 +1,74 @@
 import React from "react";
 import {
+  FaRobot,
+  FaBrain,
+  FaCloud,
+  FaLock,
+  FaChartLine,
   FaMobileAlt,
-  FaRocket,
-  FaTools,
-  FaCogs,
-  FaShoppingCart,
-  FaLaptopCode,
+  FaRocket, // Deployment
+  FaTools, // Website Maintenance
+  FaCogs, // Optimization Management
+  FaShoppingCart, // Ecommerce Development
+  FaLaptopCode, // Web Designing & Development
 } from "react-icons/fa";
 
 const services = [
+  //   {
+  //     icon: <FaRobot className="text-white text-4xl mb-4" />,
+  //     title: "AI Development",
+  //     description: `
+  // We design intelligent AI solutions that simplify business operations.
+  // Our team creates smart algorithms that solve real problems.
+  // AI helps automate tasks and reduces human errors.
+  // We build AI tools that improve decision-making.
+  // With our AI expertise, your business becomes future-ready.
+  // `,
+  //   },
+  //   {
+  //     icon: <FaBrain className="text-white text-4xl mb-4" />,
+  //     title: "Machine Learning",
+  //     description: `
+  // We create machine learning systems that learn from your data.
+  // ML helps your business predict outcomes and trends.
+  // Our models can improve accuracy and efficiency in work.
+  // We design solutions that adapt and grow over time.
+  // With ML, businesses save time, money, and effort.
+  // `,
+  //   },
+  //   {
+  //     icon: <FaCloud className="text-white text-4xl mb-4" />,
+  //     title: "Cloud Solutions",
+  //     description: `
+  // We build secure and scalable cloud environments.
+  // Your business data stays safe and always available.
+  // Our team helps you reduce IT costs with cloud adoption.
+  // We provide storage, hosting, and backup solutions.
+  // Cloud ensures flexibility to grow your business fast.
+  // `,
+  //   },
+  //   {
+  //     icon: <FaLock className="text-white text-4xl mb-4" />,
+  //     title: "Cyber Security",
+  //     description: `
+  // We protect your business from digital threats.
+  // Our experts secure websites, apps, and networks.
+  // We provide firewall, encryption, and monitoring tools.
+  // Cyber security ensures safe online transactions.
+  // Stay worry-free with our 24/7 protection system.
+  // `,
+  //   },
+  //   {
+  //     icon: <FaChartLine className="text-white text-4xl mb-4" />,
+  //     title: "Data Analytics",
+  //     description: `
+  // We turn your data into meaningful insights.
+  // Analytics helps understand customer behavior.
+  // Our reports improve decision-making and planning.
+  // We design dashboards for real-time monitoring.
+  // Data-driven strategy leads to business growth.
+  // `,
+  //   },
   {
     icon: <FaMobileAlt className="text-white text-4xl mb-4" />,
     title: "App Development",
@@ -79,26 +139,26 @@ Get websites that impress and engage customers.
 
 export function ServicesSection() {
   return (
-    <div id="services" className="bg-gray-50 py-16 px-6">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-900 mb-12 transition-transform duration-300 hover:scale-105">
+    <div className="bg-white py-12 px-6">
+      <h2
+        className="text-3xl 2xl:text-[1.5vw] font-bold text-center text-[#000] mb-10 
+               transition-transform duration-300 hover:scale-110"
+      >
         Our Services
       </h2>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => (
           <div
             key={index}
-            className="bg-gradient-to-br from-blue-600 via-blue-500 to-blue-700
-                       text-white p-6 rounded-2xl shadow-lg transform transition-all
-                       duration-300 hover:-translate-y-2 hover:shadow-2xl hover:scale-105"
+            className="bg-[#0080d3] text-white p-6 rounded-2xl shadow-lg 
+            transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl
+             hover:border-2 hover:border-black "
           >
-            <div className="text-5xl mb-4 flex justify-center">
-              {service.icon}
-            </div>
-            <h3 className="text-xl sm:text-2xl md:text-[1.5rem] font-semibold mb-3 text-center">
+            {service.icon}
+            <h3 className="text-xl 2xl:text-[1.3vw] font-semibold mb-3">
               {service.title}
             </h3>
-            <p className="text-[0.95rem] sm:text-[1rem] md:text-[1.05rem] leading-relaxed text-center whitespace-pre-line">
+            <p className="text-[1rem] 2xl:text-[1.1vw] leading-relaxed">
               {service.description}
             </p>
           </div>
