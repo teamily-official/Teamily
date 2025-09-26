@@ -98,7 +98,7 @@ export function ServicesSection() {
             <h3 className="text-xl sm:text-2xl md:text-[1.5rem] font-semibold mb-3 text-center">
               {service.title}
             </h3>
-            <p className="text-[0.95rem] sm:text-[1rem] md:text-[1.05rem] leading-relaxed text-center whitespace-pre-line">
+            <p className="text-[0.95rem] sm:text-[1rem] md:text-[1.05rem] leading-relaxed text-center ">
               {service.description}
             </p>
           </div>
