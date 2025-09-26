@@ -1,22 +1,22 @@
 // src/components/Footer.jsx
 import React from "react";
+import logo from "../../public/image/Teamlogo.png";
 
 export function Footer() {
   return (
-    <footer className="bg-white  w-[27rem] md:w-[48rem] lg:w-full h-auto">
-      <div className="px-4 sm:px-6 lg:px-8 py-10">
+    <footer className="bg-white w-full md:w-[48rem] lg:w-full py-12 ">
+      <div className="px-4 sm:px-6 lg:px-8 mb-20 ">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo Section */}
           <div className="flex flex-col items-start space-y-4">
             <img
-              src="/src/assets/image/Teamlogo.png"
+              src={logo}
               alt="TeamILy Logo"
               className="w-40 sm:w-48 object-contain"
             />
             {/* Contact info can go here if needed */}
           </div>
 
-          {/* Company Links */}
           <div>
             <h2 className="mb-4 text-[1rem] 2xl:text-[1.2vw] font-semibold text-black uppercase">
               Company

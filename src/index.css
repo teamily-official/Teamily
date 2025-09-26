@@ -15,3 +15,12 @@
   display: inline-flex;
   animation: marquee 15s linear infinite;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  scroll-padding-top: 7rem;
+
+}
