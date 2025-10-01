@@ -67,6 +67,16 @@ void main() {
 }
 `;
 
+
+
+const HeroSectionContent={
+   
+  Heading:"Your Business Deserves a Website That Works as Hard as You Do",
+  subHeading : "We design stunning, conversion-focused websites that impress visitors and turn them into customers.",
+  button:"Get Your Website Today"
+}
+
+
 export default function HeroSection() {
   const containerRef = useRef(null);
 
@@ -182,7 +192,7 @@ export default function HeroSection() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold mb-4 leading-tight"
         >
-          Your Vision, Our Technology
+          {HeroSectionContent.Heading}
         </motion.h1>
 
         <motion.p
@@ -191,8 +201,8 @@ export default function HeroSection() {
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
           className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-gray-300 max-w-xl sm:max-w-2xl md:max-w-3xl mb-8 leading-relaxed"
         >
-          Collaborate smarter, grow faster, and achieve more together with
-          Teamily’s modern platform.
+        
+        {HeroSectionContent.subHeading}
         </motion.p>
 
         <motion.a
@@ -201,7 +211,7 @@ export default function HeroSection() {
           transition={{ duration: 0.3 }}
           className="bg-white text-blue-800 font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
         >
-          Get In Touch
+  {HeroSectionContent.button}
         </motion.a>
       </div>
     </div>
