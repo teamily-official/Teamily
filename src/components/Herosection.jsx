@@ -4,7 +4,6 @@ import { Renderer, Camera, Transform, Geometry, Program, Mesh } from "ogl";
 import { motion } from "framer-motion";
 
 const defaultColors = ["#38BDF8", "#10B981", "#ffffff"];
-
 const hexToRgb = (hex) => {
   hex = hex.replace(/^#/, "");
   if (hex.length === 3)
@@ -19,7 +18,7 @@ const hexToRgb = (hex) => {
   return [r, g, b];
 };
 
-// Vertex Shader
+// Vertex Shader (same as your existing)
 const vertex = `
 attribute vec3 position;
 attribute vec4 random;
@@ -53,7 +52,7 @@ void main() {
 }
 `;
 
-// Fragment Shader
+// Fragment Shader (same as your existing)
 const fragment = `
 precision highp float;
 uniform float uTime;
@@ -68,6 +67,16 @@ void main() {
 }
 `;
 
+
+
+const HeroSectionContent={
+   
+  Heading:"Your Business Deserves a Website That Works as Hard as You Do",
+  subHeading : "We design stunning, conversion-focused websites that impress visitors and turn them into customers.",
+  button:"Get Your Website Today"
+}
+
+
 export default function HeroSection() {
   const containerRef = useRef(null);
 
@@ -78,7 +87,14 @@ export default function HeroSection() {
     const renderer = new Renderer({ alpha: true });
     const gl = renderer.gl;
     container.appendChild(gl.canvas);
-    gl.clearColor(0, 0, 0, 0);
+
+    // Make canvas cover container & behind text
+    gl.canvas.style.position = "absolute";
+    gl.canvas.style.top = 0;
+    gl.canvas.style.left = 0;
+    gl.canvas.style.width = "100%";
+    gl.canvas.style.height = "100%";
+    gl.canvas.style.zIndex = 0;
 
     const camera = new Camera(gl, { fov: 15 });
     camera.position.set(0, 0, 20);
@@ -160,38 +176,43 @@ export default function HeroSection() {
 
   return (
     <div
+      id="home"
       ref={containerRef}
-      className="relative w-full h-[70vh] sm:h-[75vh] md:h-[80vh] lg:h-[90vh] xl:h-screen 2xl:h-screen 
-             bg-[#001f3f] text-white flex items-center justify-center overflow-hidden"
-      // 👆 overflow-hidden पहले से लगा है (कोई extra scroll नहीं आएगा)
+      className="relative w-full h-[70vh] sm:h-[75vh] md:h-[80vh] lg:h-[90vh] xl:h-screen 2xl:h-screen
+                 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 text-white flex items-center justify-center overflow-hidden"
     >
-      <div className="absolute inset-0 pointer-events-none"></div>
-      {/* 👆 अब अंदर का canvas pointer events नहीं लेगा */}
+      {/* Overlay for particles */}
+      <div className="absolute inset-0 pointer-events-none z-0"></div>
 
-      <div
-        className="absolute inset-0 flex flex-col items-center justify-center text-center 
-                    px-4 sm:px-6 md:px-10 lg:px-20 overflow-hidden"
-      >
+      {/* Hero Text & CTA */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-10 lg:px-20 z-10">
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl 
-                   font-bold mb-6 cursor-pointer leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold mb-4 leading-tight"
         >
-          Your Vision, Our Technology
+          {HeroSectionContent.Heading}
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
-          className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 
-                   text-gray-300 max-w-xl sm:max-w-2xl md:max-w-3xl mb-8 cursor-pointer leading-relaxed"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-gray-300 max-w-xl sm:max-w-2xl md:max-w-3xl mb-8 leading-relaxed"
         >
-          Collaborate smarter, grow faster, and achieve more together with
-          Teamily’s modern platform.
+        
+        {HeroSectionContent.subHeading}
         </motion.p>
+
+        <motion.a
+          href="#contact"
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.3 }}
+          className="bg-white text-blue-800 font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+        >
+  {HeroSectionContent.button}
+        </motion.a>
       </div>
     </div>
   );

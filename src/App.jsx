@@ -9,8 +9,24 @@ import { ProcessSection } from "./components/ProcessSection";
 import { ServicesSection } from "./components/ServiceSection";
 // eslint-disable-next-line no-unused-vars
 import { motion as m } from "framer-motion";
-import SplashCursor from "./reusable/SplashCursor";
+// import SplashCursor from "./reusable/SplashCursor";
 import { About } from "./components/About";
+import { CardDescription, HoverEffect } from "./AcerternityComponents/CardHoverEffect";
+
+import {
+  FaMobileAlt,
+  FaRocket,
+  FaTools,
+  FaCogs,
+  FaShoppingCart,
+  FaLaptopCode,
+} from "react-icons/fa";
+import { servicesContent } from "./data/ServiceData";
+import { LogoSection } from "./AcerternityComponents/LogoSection";
+import { logos } from "./data/LogoSection";
+
+
+
 
 function App() {
   const fadeUp = {
@@ -19,7 +35,7 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full ">
       {/* Header */}
       <Header />
 
@@ -44,7 +60,13 @@ function App() {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: false }}
         >
-          <ServicesSection />
+          {/* <ServicesSection /> */}
+      <div className="bg-gray-50 py-16 px-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-900 mb-12 transition-transform duration-300 hover:scale-105">
+        Our Services
+      </h2>
+            <HoverEffect items={servicesContent}/>
+      </div>
         </m.div>
 
         {/* About Section */}
@@ -66,8 +88,10 @@ function App() {
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: false }}
         >
-          <LogosSection />
+          <LogoSection items={logos}/>
+          
         </m.div>
+
 
         {/* Feature Section */}
         <m.div
@@ -103,7 +127,7 @@ function App() {
       >
         <Footer />
       </m.div>
-      <SplashCursor />
+      {/* <SplashCursor /> */}
     </div>
   );
 }
