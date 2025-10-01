@@ -22,6 +22,8 @@ import {
   FaLaptopCode,
 } from "react-icons/fa";
 import { servicesContent } from "./data/ServiceData";
+import { LogoSection } from "./AcerternityComponents/LogoSection";
+import { logos } from "./data/LogoSection";
 
 
 
@@ -86,8 +88,10 @@ function App() {
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: false }}
         >
-          <LogosSection />
+          <LogoSection items={logos}/>
+          
         </m.div>
+
 
         {/* Feature Section */}
         <m.div
