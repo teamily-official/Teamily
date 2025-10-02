@@ -1,6 +1,6 @@
 // src/components/Footer.jsx
 import React from "react";
-import logo from "../../public/image/Teamlogo.png";
+import logo from "../../public/Logo/CompanyLogo.png";
 
 export function Footer() {
   return (

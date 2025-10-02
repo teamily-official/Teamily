@@ -79,7 +79,7 @@ Get websites that impress and engage customers.
 
 export function ServicesSection() {
   return (
-    <div id="services" className="bg-gray-50 py-16 px-6">
+    <div id="services" className="">
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-900 mb-12 transition-transform duration-300 hover:scale-105">
         Our Services
       </h2>
@@ -88,7 +88,7 @@ export function ServicesSection() {
         {services.map((service, index) => (
           <div
             key={index}
-            className="bg-gradient-to-br from-blue-600 via-blue-500 to-blue-700
+            className="bg-gradient-to-br from-blue-600 via-blue-500 to-red-700
                        text-white p-6 rounded-2xl shadow-lg transform transition-all
                        duration-300 hover:-translate-y-2 hover:shadow-2xl hover:scale-105"
           >
