@@ -1,32 +1,21 @@
-"use client";
-import { useState, useEffect } from "react";
-import logo from "../../public/Logo/CompanyLogo1.png";
-
+// src/components/Header.jsx
+import { useState } from "react";
+import logo from "../../public/Logo/CompanyLogo.png";
 const navItems = ["Home", "About", "Services", "Contact"];
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   const toggleMobileMenu = () => {
     setMobileOpen(!mobileOpen);
   };
 
-  // Detect scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <header className="w-full fixed top-0 left-0 z-50">
-      <div className="px-4 sm:px-6 lg:px-8">
-        <div className="h-24 flex items-center justify-between mt-2">
+    <header className="w-full 2xl:h-[7vw]  bg-white shadow-md fixed top-0 left-0 z-50">
+      <div className=" px-4 sm:px-6 lg:px-8">
+        <div className="h-24 2xl:top-[3vw] flex items-center justify-between mt-2">
           {/* Logo */}
-          <div className="w-21 sm:w-25">
+          <div className="w-27">
             <img
               src={logo}
               alt="Logo"
@@ -34,25 +23,13 @@ export function Header() {
             />
           </div>
 
-          {/* Desktop Nav - only this gets blur on scroll */}
-          <nav
-            className={`hidden sm:flex gap-10 text-[1rem] 2xl:text-[1.2vw] max-w-4xl px-10 rounded-3xl py-2 transition-all duration-300
-              ${
-                scrolled
-                  ? "backdrop-blur-lg bg-white/30 shadow-2xl "
-                  : "bg-gradient-to-r from-[#151F5F] via-[#274990] to-[#3CAAE7] backdrop-blur-3xl  "
-              }`}
-          >
+          {/* Desktop Nav */}
+          <nav className="hidden sm:flex gap-10 text-[1rem] 2xl:text-[1.2vw]">
             {navItems.map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                 className={`font-semibold hover:text-black mx-3
-              ${
-                scrolled
-                  ? "text-black hover:text-blue-400"
-                  : "text-white   "
-              }`}
+                className="text-blue-600 font-semibold hover:text-blue-800"
               >
                 {item}
               </a>
@@ -68,7 +45,7 @@ export function Header() {
 
           {/* Hamburger for mobile */}
           <button
-            className="sm:hidden text-white focus:outline-none cursor-pointer"
+            className="sm:hidden text-blue-600 focus:outline-none"
             onClick={toggleMobileMenu}
           >
             <svg
@@ -90,25 +67,22 @@ export function Header() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="sm:hidden shadow-md w-full h-screen backdrop-blur-2xl bg-white/20 absolute top-24 left-0">
+        <div className="sm:hidden bg-white shadow-md w-full absolute top-24 left-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <ul className="flex flex-col items-center py-4 gap-4">
               {navItems.map((item) => (
-                <div
-                  key={item}
-                  className="w-full text-center hover:backdrop-blur-2xl hover:bg-white/20 rounded-2xl"
-                >
+                <li key={item}>
                   <a
                     href={`#${item.toLowerCase()}`}
-                    className="text-blue-600 font-semibold text-2xl hover:text-blue-800 block my-2"
+                    className="text-blue-600 font-semibold hover:text-blue-800"
                     onClick={() => setMobileOpen(false)}
                   >
                     {item}
                   </a>
-                </div>
+                </li>
               ))}
               <li>
-                <button className="bg-blue-900 text-white px-6 py-2 rounded-md hover:bg-blue-800 cursor-pointer">
+                <button className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-800">
                   Get Contact
                 </button>
               </li>

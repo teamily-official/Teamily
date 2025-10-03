@@ -2,7 +2,7 @@ import { cn } from "../../lib/utils";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-export const ServiceSection = ({ items, className }) => {
+export const HoverEffect = ({ items, className }) => {
   let [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
@@ -30,7 +30,7 @@ export const ServiceSection = ({ items, className }) => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.3 }}
-                className="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-3xl p-4 rounded-3xl"
+                className="absolute inset-0 flex items-center justify-center bg-black/80 p-4 rounded-3xl"
               >
                 <CardDescription>{item.description}</CardDescription>
               </motion.div>
@@ -48,7 +48,7 @@ export const Card = ({ className, children }) => {
       whileHover={{ scale: 1.05 }}
       transition={{ type: "spring", stiffness: 200, damping: 15 }}
       className={cn(
-        "relative rounded-3xl h-72 w-full bg-gradient-to-br from-[#151F5F] via-[#274990] to-[#3CAAE7] shadow-xl cursor-pointer overflow-hidden flex flex-col items-center justify-center text-center",
+        "relative rounded-3xl h-72 w-full bg-gradient-to-br from-neutral-900 to-neutral-800 shadow-xl cursor-pointer overflow-hidden flex flex-col items-center justify-center text-center",
         className
       )}
     >
@@ -85,12 +85,12 @@ export const CardDescription = ({ className, children }) => {
 
 export const CardImage = ({ children, className }) => {
   return (
-    <div className="w-28 h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 flex-shrink-0 flex items-center justify-center overflow-hidden rounded-2xl ">
+    <div className="w-28 h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 flex-shrink-0 flex items-center justify-center overflow-hidden rounded-2xl bg-neutral-800">
       <img
         src={children}
         alt="ServiceSectionImages"
         className={cn(
-          "w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 ",
+          "w-full h-full object-contain transition-transform duration-300 group-hover:scale-110",
           className
         )}
       />

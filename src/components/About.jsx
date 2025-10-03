@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import AboutUsImage from "../assets/AboutUsImages/AboutUs.png";
+
 const contentData = [
   {
     title: "Your Success, Our Ultimate Goal",
@@ -48,12 +48,15 @@ export function About() {
       </h2>
 
       <div className="relative z-10 container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Left: Card*/}
-        <div className="  rounded-3xl shadow-3xl   ">
-          <motion.img
-            src={AboutUsImage}
-            alt="AboutUs Image"
-            className="w-full rounded-3xl shadow-blue-300 shadow-xl h-100 md:h-100 lg:h-max  "
+        {/* Left: Video */}
+        <div className="w-full flex justify-center">
+          <motion.video
+            src="https://www.w3schools.com/html/mov_bbb.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="rounded-2xl shadow-xl w-full h-[300px] sm:h-[350px] md:h-[400px] object-cover"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
@@ -72,7 +75,7 @@ export function About() {
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className="bg-white shadow-lg rounded-xl p-6 border border-gray-200 hover:border-blue-500
-                         transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl shadow-blue-200 cursor-pointer"
+                         transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
             >
               <h3 className="text-xl sm:text-2xl md:text-[1.5rem] font-bold mb-2 text-gray-800 hover:text-blue-600 transition-colors duration-300">
                 {item.title}
