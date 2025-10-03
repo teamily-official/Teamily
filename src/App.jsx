@@ -1,20 +1,29 @@
 // src/App.jsx
 import "./App.css";
 import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import FeatureSection from "./components/FeatureSection";
+import { LogosSection } from "./components/LogosSection";
+import { ProcessSection } from "./components/ProcessSection";
+import { ServicesSection } from "./components/ServiceSection";
 // eslint-disable-next-line no-unused-vars
 import { motion as m } from "framer-motion";
 // import SplashCursor from "./reusable/SplashCursor";
 import { About } from "./components/About";
-import {  ServiceSection } from "./AcerternityComponents/ServiceSection";
+import { CardDescription, HoverEffect } from "./AcerternityComponents/CardHoverEffect";
 
+import {
+  FaMobileAlt,
+  FaRocket,
+  FaTools,
+  FaCogs,
+  FaShoppingCart,
+  FaLaptopCode,
+} from "react-icons/fa";
 import { servicesContent } from "./data/ServiceData";
 import { LogoSection } from "./AcerternityComponents/LogoSection";
 import { logos } from "./data/LogoSection";
-import { ProcessSection } from "./AcerternityComponents/ProcessSection";
-import { workflowSteps } from "./data/ProcessSection";
-import Footer from "./components/Footer";
 
 
 
@@ -56,7 +65,7 @@ function App() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-900 mb-12 transition-transform duration-300 hover:scale-105">
         Our Services
       </h2>
-            <ServiceSection items={servicesContent}/>
+            <HoverEffect items={servicesContent}/>
       </div>
         </m.div>
 
@@ -103,8 +112,7 @@ function App() {
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: false }}
         >
-          {/* <ProcessSection /> */}
-          <ProcessSection content={workflowSteps} />
+          <ProcessSection />
         </m.div>
       </main>
 
@@ -117,8 +125,7 @@ function App() {
         transition={{ duration: 0.6, delay: 0.2 }}
         viewport={{ once: false }}
       >
-        {/* <Footer /> */}
-        <Footer/>
+        <Footer />
       </m.div>
       {/* <SplashCursor /> */}
     </div>
