@@ -37,9 +37,7 @@ export function ProcessSection() {
   return (
     <section className="bg-[#0080d3] py-16 px-4">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white">
-          Our Tech-Savvy <span className="text-[#00ffff]">Process</span>
-        </h2>
+      
 
         <div className="mt-16 flex flex-wrap justify-center gap-12 md:gap-20 relative">
           {steps.map((step, index) => (
