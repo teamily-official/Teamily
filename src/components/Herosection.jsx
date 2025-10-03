@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import { Renderer, Camera, Transform, Geometry, Program, Mesh } from "ogl";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import { TextGenerateEffect } from "../AcerternityComponents/text-generate-effect";
 
 const defaultColors = ["#38BDF8", "#10B981", "#ffffff"];
 const hexToRgb = (hex) => {
@@ -180,10 +179,12 @@ export default function HeroSection() {
       id="home"
       ref={containerRef}
       className="relative w-full h-[70vh] sm:h-[75vh] md:h-[80vh] lg:h-[90vh] xl:h-screen 2xl:h-screen
-                 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-600 text-white flex items-center justify-center overflow-hidden"
+                 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 text-white flex items-center justify-center overflow-hidden"
     >
+      {/* Overlay for particles */}
       <div className="absolute inset-0 pointer-events-none z-0"></div>
 
+      {/* Hero Text & CTA */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-10 lg:px-20 z-10">
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
@@ -191,7 +192,7 @@ export default function HeroSection() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold mb-4 leading-tight"
         >
-          <TextGenerateEffect words={HeroSectionContent.Heading} />
+          {HeroSectionContent.Heading}
         </motion.h1>
 
         <motion.p
@@ -204,25 +205,14 @@ export default function HeroSection() {
         {HeroSectionContent.subHeading}
         </motion.p>
 
-       
-<motion.button class="cssbuttons-io-button">
-   {HeroSectionContent.button}
-  <div class="icon">
-    <svg
-      height="24"
-      width="24"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M0 0h24v24H0z" fill="none"></path>
-      <path
-        d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-        fill="currentColor"
-      ></path>
-    </svg>
-  </div>
-</motion.button>
-
+        <motion.a
+          href="#contact"
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.3 }}
+          className="bg-white text-blue-800 font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+        >
+  {HeroSectionContent.button}
+        </motion.a>
       </div>
     </div>
   );
