@@ -51,7 +51,7 @@ export function Header() {
               ${
                 scrolled
                   ? "text-black hover:text-blue-400"
-                  : "text-white   "
+                  : "text-white"
               }`}
               >
                 {item}
@@ -59,7 +59,6 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Get Contact Button (desktop only) */}
           <div className="hidden sm:block">
             <button className="bg-blue-600 text-white text-[1rem] 2xl:text-[1.2vw] px-6 py-2 rounded-md hover:bg-blue-800 whitespace-nowrap">
               Get Contact
