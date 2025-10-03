@@ -68,7 +68,7 @@ export function Header() {
 
           {/* Hamburger for mobile */}
           <button
-            className="sm:hidden text-white focus:outline-none cursor-pointer"
+            className="sm:hidden text-white focus:outline-none cursor-pointer "
             onClick={toggleMobileMenu}
           >
             <svg
