@@ -54,9 +54,9 @@ export const LogoSection = ({
   };
   return (
 
-    <div className="my-4">
-<h1 className="relative z-10 text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-900 mb-12 transition-transform duration-300 hover:scale-105">
-        Technology
+    <div className="">
+<h1 className="relative z-10 text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-900 mb-12 transition-transform duration-300 hover:scale-105 my-10 py-15">
+        Our Development Stack
       </h1>
     <div
       ref={containerRef}
@@ -75,10 +75,8 @@ export const LogoSection = ({
         {items.map((item, idx) => (
           <img
           src={item.src}
-            className=" relative w-full shrink-0 rounded-2xl  bg-white px-8 py-6 md:w-[350px] cursor-pointer  shadow-lg "
+            className=" relative w-full h-46  shrink-0 rounded-2xl  bg-white px-8 py-6 md:w-[350px] cursor-pointer  shadow-lg shadow-blue-300 "
             key={idx}  > 
-
-            
           </img>
         ))}
       </ul>
