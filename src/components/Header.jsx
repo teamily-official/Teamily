@@ -39,7 +39,7 @@ export function Header() {
             className={`hidden sm:flex gap-10 text-[1rem] 2xl:text-[1.2vw] max-w-4xl px-10 rounded-3xl py-2 transition-all duration-300
               ${
                 scrolled
-                  ? "backdrop-blur-lg bg-white/30 shadow-2xl "
+                  ? "backdrop-blur-3xl bg-white shadow-2xl  "
                   : "bg-gradient-to-r from-[#151F5F] via-[#274990] to-[#3CAAE7] backdrop-blur-3xl  "
               }`}
           >
