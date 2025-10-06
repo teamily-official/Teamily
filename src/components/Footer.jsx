@@ -2,10 +2,10 @@ import Companylogo from "../../public/Logo/CompanyLogo1.png";
 import {
   CompanyDetails,
   ContactDetails,
-  LegalDetails,
+  // LegalDetails,
 } from "../data/FooterSectionData";
 import { servicesContent } from "../data/ServiceData";
-export default function Footer() {
+export function Footer() {
   return (
     <footer className="bg-blue-50">
       <div className="">
