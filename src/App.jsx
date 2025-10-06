@@ -13,10 +13,6 @@ import { motion as m } from "framer-motion";
 // import SplashCursor from "./reusable/SplashCursor";
 import { About } from "./components/About";
 import { ServiceSection } from "./AcerternityComponents/ServiceSection";
-import {
-  CardDescription,
-  HoverEffect,
-} from "./AcerternityComponents/CardHoverEffect";
 
 import { servicesContent } from "./data/ServiceData";
 import { LogoSection } from "./AcerternityComponents/LogoSection";
