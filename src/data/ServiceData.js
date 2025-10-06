@@ -53,7 +53,7 @@ Stay ahead of competitors with a website that works smarter.
   },
   {
     image: EcommerceDevelopmentImage, 
-    title: "Ecommerce Development",
+    title: "E-commerce Development",
     description: `
 Launch a secure, fast, and high-converting online store.  
 We integrate payment gateways, shipping, and advanced tools.  

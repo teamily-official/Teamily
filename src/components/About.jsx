@@ -24,7 +24,10 @@ export function About() {
   };
 
   return (
-    <section id="about" className="relative w-full py-16 px-4 sm:px-6 md:px-10 lg:px-20 overflow-hidden bg-gray-50">
+    <section
+      id="about"
+      className="relative w-full py-16 px-4 sm:px-6 md:px-10 lg:px-20 overflow-hidden bg-gray-50"
+    >
       {/* Animated Background Shapes */}
       <motion.div
         className="absolute top-10 left-10 w-72 h-72 rounded-full bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 opacity-20 blur-3xl"
@@ -47,21 +50,21 @@ export function About() {
         About Us
       </h2>
 
-      <div className="relative z-10 container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Left: Card*/}
-        <div className="  rounded-3xl shadow-3xl   ">
+      <div className="relative z-10 container mx-auto flex flex-col items-center gap-10">
+        {/* Top: Image (hidden on tablet) */}
+        <div className="w-full rounded-3xl shadow-3xl ">
           <motion.img
             src={AboutUsImage}
             alt="AboutUs Image"
-            className="w-full rounded-3xl shadow-blue-300 shadow-xl h-100 md:h-100 lg:h-max  "
+            className="w-full rounded-3xl shadow-blue-300 shadow-xl h-auto"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
           />
         </div>
 
-        {/* Right: Cards */}
-        <div className="flex flex-col gap-6">
+        {/* Bottom: Cards */}
+        <div className="w-full flex flex-col gap-6">
           {contentData.map((item, index) => (
             <motion.div
               key={index}
@@ -72,7 +75,7 @@ export function About() {
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className="bg-white shadow-lg rounded-xl p-6 border border-gray-200 hover:border-blue-500
-                         transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl shadow-blue-200 cursor-pointer"
+                   transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl shadow-blue-200 cursor-pointer"
             >
               <h3 className="text-xl sm:text-2xl md:text-[1.5rem] font-bold mb-2 text-gray-800 hover:text-blue-600 transition-colors duration-300">
                 {item.title}

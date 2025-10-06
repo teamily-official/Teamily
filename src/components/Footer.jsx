@@ -1,4 +1,3 @@
-import React from "react";
 import Companylogo from "../../public/Logo/CompanyLogo1.png";
 import {
   CompanyDetails,
@@ -10,56 +9,61 @@ const Footer = () => {
   return (
     <footer className="bg-blue-50">
       <div className="">
-        <div className="flex justify-evenly">
-          <div className="mt-8" >
-            <img src={Companylogo} alt="Company Logo" width={210} />
-          </div>  
-          <div className="mt-10 grid grid-cols-3">
-            <div className="col-span-2 lg:col-span-3 lg:flex lg:items-end"></div> 
+        <div className="flex flex-col md:flex-row items-center lg:items-start lg:justify-evenly">
+          {/* Logo Section */}
+          <div className="mt-10 lg:mt-20">
+            <img
+              src={Companylogo}
+              alt="Company Logo"
+              width={210}
+              className="mx-auto lg:mx-0"
+            />
+          </div>
 
-            <div className="col-span-2 sm:col-span-1">
+          {/* Info Grid */}
+          <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-6 text-center md:text-left">
+            {/* Company Section */}
+            <div>
               <p className="font-medium text-blue-800 text-2xl">Company</p>
               <ul className="mt-6 space-y-4 text-sm">
-                {CompanyDetails.map((items, index) => {
-                  return (
-                    <li
-                      key={index}
-                      className="text-lg  transition hover:text-blue-300 cursor-pointer"
-                    >
-                      <a href={items.link}>{items.title}</a>
-                    </li>
-                  );
-                })}
+                {CompanyDetails.map((items, index) => (
+                  <li
+                    key={index}
+                    className="text-lg text-gray-700 transition hover:text-blue-500 cursor-pointer"
+                  >
+                    <a href={items.link}>{items.title}</a>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            <div className="col-span-2 sm:col-span-1">
+            {/* Contact Section */}
+            <div>
               <p className="font-medium text-blue-800 text-2xl">Contact</p>
-
               <ul className="mt-6 space-y-4 text-sm">
-                {ContactDetails.map((items) => {
-                  return (
-                    <li  className="text-lg text-gray-700 transition hover:text-blue-500 cursor-pointer">
-                      {items.title} 
-                    </li>
-                  );
-                })}
+                {ContactDetails.map((items, index) => (
+                  <li
+                    key={index}
+                    className="text-lg text-gray-700 transition hover:text-blue-500 cursor-pointer"
+                  >
+                    {items.title}
+                  </li>
+                ))}
               </ul>
             </div>
 
-
-{/* Service Section   */}
-            <div className="col-span-2 sm:col-span-1">
-              <p className="font-medium text-blue-800 text-2xl ">Services</p>
-
+            {/* Services Section */}
+            <div>
+              <p className="font-medium text-blue-800 text-2xl">Services</p>
               <ul className="mt-6 space-y-4 text-sm">
-                {servicesContent.map((items) => {
-                  return (
-                    <li className="text-lg text-gray-700 transition hover:text-blue-500 cursor-pointer">
-                      {items.title}
-                    </li>
-                  );
-                })}
+                {servicesContent.map((items, index) => (
+                  <li
+                    key={index}
+                    className="text-lg text-gray-700 transition hover:text-blue-500 cursor-pointer"
+                  >
+                    {items.title}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

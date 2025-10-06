@@ -47,12 +47,8 @@ export function Header() {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                 className={`font-semibold hover:text-black mx-3
-              ${
-                scrolled
-                  ? "text-black hover:text-blue-400"
-                  : "text-white"
-              }`}
+                className={`font-semibold hover:text-black mx-3
+              ${scrolled ? "text-black hover:text-blue-400" : "text-white"}`}
               >
                 {item}
               </a>
@@ -67,7 +63,7 @@ export function Header() {
 
           {/* Hamburger for mobile */}
           <button
-            className="sm:hidden text-white focus:outline-none cursor-pointer"
+            className="sm:hidden text-black focus:outline-none cursor-pointer"
             onClick={toggleMobileMenu}
           >
             <svg
