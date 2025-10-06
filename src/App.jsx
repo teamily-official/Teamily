@@ -5,9 +5,7 @@ import HeroSection from "./components/Herosection";
 import { Footer } from "./components/Footer";
 
 import FeatureSection from "./components/FeatureSection";
-import { LogosSection } from "./components/LogosSection";
 import { ProcessSection } from "./components/ProcessSection";
-import { ServicesSection } from "./components/ServiceSection";
 // eslint-disable-next-line no-unused-vars
 import { motion as m } from "framer-motion";
 // import SplashCursor from "./reusable/SplashCursor";
@@ -116,7 +114,7 @@ function App() {
         transition={{ duration: 0.6, delay: 0.2 }}
         viewport={{ once: false }}
       >
-        {/* <Footer /> */}
+     
         <FaqSection />
       </m.div>
 

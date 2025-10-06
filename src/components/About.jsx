@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
- import {AboutUsImage} from "../assets/AboutUsImages"
+ import AboutUsImage from "../assets/AboutUsImages/AboutUs.png"
 const contentData = [
   {
     title: "Your Success, Our Ultimate Goal",
@@ -50,7 +50,7 @@ export function About() {
         About Us
       </h2>
 
-      <div className="relative z-10 container mx-auto flex flex-col items-center gap-10">
+      <div className="relative z-10 container mx-auto flex flex-col md:flex-row items-center gap-10">
         {/* Top: Image (hidden on tablet) */}
         <div className="w-full rounded-3xl shadow-3xl ">
           <motion.img
