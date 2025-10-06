@@ -5,13 +5,13 @@ import HeroSection from "./components/Herosection";
 import { Footer } from "./components/Footer";
 
 import FeatureSection from "./components/FeatureSection";
-import { ProcessSection } from "./components/ProcessSection";
+import { ProcessSection } from "./AcerternityComponents/ProcessSection";
 // eslint-disable-next-line no-unused-vars
 import { motion as m } from "framer-motion";
 // import SplashCursor from "./reusable/SplashCursor";
 import { About } from "./components/About";
 import { ServiceSection } from "./AcerternityComponents/ServiceSection";
-
+import { workflowSteps } from "./data/ProcessSection";
 import { servicesContent } from "./data/ServiceData";
 import { LogoSection } from "./AcerternityComponents/LogoSection";
 import { logos } from "./data/LogoSection";
@@ -100,7 +100,8 @@ function App() {
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: false }}
         >
-          <ProcessSection />
+          {/* <ProcessSection /> */}
+          <ProcessSection content={workflowSteps} />
         </m.div>
       </main>
 
@@ -114,7 +115,6 @@ function App() {
         transition={{ duration: 0.6, delay: 0.2 }}
         viewport={{ once: false }}
       >
-     
         <FaqSection />
       </m.div>
 

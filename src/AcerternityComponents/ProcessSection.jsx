@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+// eslint-disable-next-line no-unused-vars
 import { AnimatePresence, useMotionValueEvent, useScroll, motion } from "motion/react";
 import { cn } from "../../lib/utils.js";
 
@@ -31,7 +32,7 @@ const backgroundColors = [
     "linear-gradient(to bottom right, #f97316, #eab308)",
   ];
 
-  const [backgroundGradient, setBackgroundGradient] = useState(linearGradients[0]);
+  const [, setBackgroundGradient] = useState(linearGradients[0]);
 
   useEffect(() => {
     setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
