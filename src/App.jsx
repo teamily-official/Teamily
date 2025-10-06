@@ -15,6 +15,7 @@ import { logos } from "./data/LogoSection";
 import { ProcessSection } from "./AcerternityComponents/ProcessSection";
 import { workflowSteps } from "./data/ProcessSection";
 import Footer from "./components/Footer";
+import FaqSection from "./components/FaqSection";
 
 
 
@@ -107,6 +108,21 @@ function App() {
           <ProcessSection content={workflowSteps} />
         </m.div>
       </main>
+
+
+{/* FAQ Section */}
+
+  <m.div
+        className="w-full"
+        initial="hidden"
+        whileInView="visible"
+        variants={fadeUp}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: false }}
+      >
+        {/* <Footer /> */}
+        <FaqSection/>
+      </m.div>
 
       {/* Footer */}
       <m.div
