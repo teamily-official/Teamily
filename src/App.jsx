@@ -2,19 +2,26 @@
 import "./App.css";
 import { Header } from "./components/Header";
 import HeroSection from "./components/Herosection";
+import { Footer } from "./components/Footer";
+
 import FeatureSection from "./components/FeatureSection";
+import { LogosSection } from "./components/LogosSection";
+import { ProcessSection } from "./components/ProcessSection";
+import { ServicesSection } from "./components/ServiceSection";
 // eslint-disable-next-line no-unused-vars
 import { motion as m } from "framer-motion";
 // import SplashCursor from "./reusable/SplashCursor";
 import { About } from "./components/About";
 import { ServiceSection } from "./AcerternityComponents/ServiceSection";
+import {
+  CardDescription,
+  HoverEffect,
+} from "./AcerternityComponents/CardHoverEffect";
 
 import { servicesContent } from "./data/ServiceData";
 import { LogoSection } from "./AcerternityComponents/LogoSection";
 import { logos } from "./data/LogoSection";
-import { ProcessSection } from "./AcerternityComponents/ProcessSection";
-import { workflowSteps } from "./data/ProcessSection";
-import Footer from "./components/Footer";
+
 import FaqSection from "./components/FaqSection";
 
 function App() {
@@ -99,8 +106,7 @@ function App() {
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: false }}
         >
-          {/* <ProcessSection /> */}
-          <ProcessSection content={workflowSteps} />
+          <ProcessSection />
         </m.div>
       </main>
 
@@ -127,7 +133,6 @@ function App() {
         transition={{ duration: 0.6, delay: 0.2 }}
         viewport={{ once: false }}
       >
-        {/* <Footer /> */}
         <Footer />
       </m.div>
       {/* <SplashCursor /> */}

@@ -5,7 +5,7 @@ import {
   LegalDetails,
 } from "../data/FooterSectionData";
 import { servicesContent } from "../data/ServiceData";
-const Footer = () => {
+export default function Footer() {
   return (
     <footer className="bg-blue-50">
       <div className="">
@@ -76,9 +76,11 @@ const Footer = () => {
             </p>
           </div>
         </div>
+        {/* Optional: Copyright / Bottom text */}
+        {/* <div className="mt-10 text-center text-sm text-gray-500">
+          &copy; {new Date().getFullYear()} TeamILy. All rights reserved.
+        </div> */}
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

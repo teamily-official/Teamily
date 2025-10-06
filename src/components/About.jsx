@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import AboutUsImage from "../assets/AboutUsImages/AboutUs.png";
+ import {AboutUsImage} from "../assets/AboutUsImages"
 const contentData = [
   {
     title: "Your Success, Our Ultimate Goal",
