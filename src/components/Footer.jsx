@@ -1,106 +1,79 @@
-// src/components/Footer.jsx
-import React from "react";
-import logo from "../../public/Logo/CompanyLogo.png";
-
-export function Footer() {
+import Companylogo from "../../public/Logo/CompanyLogo1.png";
+import {
+  CompanyDetails,
+  ContactDetails,
+  LegalDetails,
+} from "../data/FooterSectionData";
+import { servicesContent } from "../data/ServiceData";
+export default function Footer() {
   return (
-    <footer className="bg-white w-full md:w-[48rem] lg:w-full py-12 ">
-      <div className="px-4 sm:px-6 lg:px-8 mb-20 ">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-blue-50">
+      <div className="">
+        <div className="flex flex-col md:flex-row items-center lg:items-start lg:justify-evenly">
           {/* Logo Section */}
-          <div className="flex flex-col items-start space-y-4">
+          <div className="mt-10 lg:mt-20">
             <img
-              src={logo}
-              alt="TeamILy Logo"
-              className="w-40 sm:w-48 object-contain"
+              src={Companylogo}
+              alt="Company Logo"
+              width={210}
+              className="mx-auto lg:mx-0"
             />
-            {/* Contact info can go here if needed */}
           </div>
 
-          <div>
-            <h2 className="mb-4 text-[1rem] 2xl:text-[1.2vw] font-semibold text-black uppercase">
-              Company
-            </h2>
-            <ul className="space-y-2 text-[#0080d3] font-medium">
-              <li>
-                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
-                  Service
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
-                  Our Work
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
-                  Blog
-                </a>
-              </li>
-            </ul>
-          </div>
+          {/* Info Grid */}
+          <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-6 text-center md:text-left">
+            {/* Company Section */}
+            <div>
+              <p className="font-medium text-blue-800 text-2xl">Company</p>
+              <ul className="mt-6 space-y-4 text-sm">
+                {CompanyDetails.map((items, index) => (
+                  <li
+                    key={index}
+                    className="text-lg text-gray-700 transition hover:text-blue-500 cursor-pointer"
+                  >
+                    <a href={items.link}>{items.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Contact Links */}
-          <div>
-            <h2 className="mb-4 text-[1rem] 2xl:text-[1.2vw] font-semibold text-black uppercase">
-              Contact
-            </h2>
-            <ul className="space-y-2 text-[#0080d3] font-medium">
-              <li>
-                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
-                  E-Mail
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
-                  Contact Number
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
-                  Address
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
-                  Website
-                </a>
-              </li>
-            </ul>
-          </div>
+            {/* Contact Section */}
+            <div>
+              <p className="font-medium text-blue-800 text-2xl">Contact</p>
+              <ul className="mt-6 space-y-4 text-sm">
+                {ContactDetails.map((items, index) => (
+                  <li
+                    key={index}
+                    className="text-lg text-gray-700 transition hover:text-blue-500 cursor-pointer"
+                  >
+                    {items.title}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Services / Help */}
-          <div>
-            <h2 className="mb-4 text-[1rem] 2xl:text-[1.2vw] font-semibold text-black uppercase">
-              Services
-            </h2>
-            <ul className="space-y-2 text-[#0080d3] font-medium">
-              <li>
-                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
-                  iOS App Development
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
-                  Android App Development
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
-                  Software Development
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-[1rem] 2xl:text-[1.2vw]">
-                  Website Development
-                </a>
-              </li>
-            </ul>
+            {/* Services Section */}
+            <div>
+              <p className="font-medium text-blue-800 text-2xl">Services</p>
+              <ul className="mt-6 space-y-4 text-sm">
+                {servicesContent.map((items, index) => (
+                  <li
+                    key={index}
+                    className="text-lg text-gray-700 transition hover:text-blue-500 cursor-pointer"
+                  >
+                    {items.title}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-8 border-t-2 border-blue-100 pt-8 mx-30">
+          <div className="text-center">
+            <p className="text-md text-gray-500">
+              &copy; 2025. Teamily. All rights reserved.
+            </p>
           </div>
         </div>
         {/* Optional: Copyright / Bottom text */}
