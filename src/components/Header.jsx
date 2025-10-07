@@ -1,21 +1,38 @@
-// src/components/Header.jsx
-import { useState } from "react";
-import logo from "../../public/Logo/CompanyLogo.png";
+"use client";
+import { useState, useEffect } from "react";
+import logo from "../../public/Logo/CompanyLogo1.png";
+
 const navItems = ["Home", "About", "Services", "Contact"];
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleMobileMenu = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  // Detect scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="w-full 2xl:h-[7vw]  bg-white shadow-md fixed top-0 left-0 z-50">
-      <div className=" px-4 sm:px-6 lg:px-8">
-        <div className="h-24 2xl:top-[3vw] flex items-center justify-between mt-2">
+    <header className="w-full fixed top-0 left-0 z-50 ">
+      <div
+        className={`px-2 py-1 sm:px-4 lg:px-6 xl:px-8 bg- ${
+          scrolled
+            ? "backdrop-blur-3xl backface-visible"
+            : ""
+        } `}
+      >
+        <div className="h-fit flex items-center justify-between gap-2  ">
           {/* Logo */}
-          <div className="w-27">
+          <div className="w-20 md:w-22 md:h-22 ">
             <img
               src={logo}
               alt="Logo"
@@ -23,29 +40,30 @@ export function Header() {
             />
           </div>
 
-          {/* Desktop Nav */}
-          <nav className="hidden sm:flex gap-10 text-[1rem] 2xl:text-[1.2vw]">
+          {/* Desktop Nav - only this gets blur on scroll */}
+          <nav
+            className="hidden md:flex gap-2 xl:gap-5 text-[1.2rem] 2xl:text-[1.1vw] px-6 py-1  rounded-3xl transition-all duration-300 bg-gradient-to-r from-[#151F5F] via-[#274990] to-[#3CAAE7] backdrop-blur-3xl"
+          >
             {navItems.map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-blue-600 font-semibold hover:text-blue-800"
+                className="font-mono text-white hover:text-[#FF7D22] mx-1 xl:mx-3"
               >
                 {item}
               </a>
             ))}
           </nav>
 
-          {/* Get Contact Button (desktop only) */}
           <div className="hidden sm:block">
-            <button className="bg-blue-600 text-white text-[1rem] 2xl:text-[1.2vw] px-6 py-2 rounded-md hover:bg-blue-800 whitespace-nowrap">
+            <button className="font-mono text-[1rem]  2xl:text-[1.1vw] px-4 md:px-6 py-1  rounded-md text-white hover:text-[#FF7D22] bg-blue-600 whitespace-nowrap">
               Get Contact
             </button>
           </div>
 
           {/* Hamburger for mobile */}
           <button
-            className="sm:hidden text-white focus:outline-none cursor-pointer "
+            className="sm:hidden text-white focus:outline-none cursor-pointer"
             onClick={toggleMobileMenu}
           >
             <svg
@@ -66,30 +84,33 @@ export function Header() {
       </div>
 
       {/* Mobile Menu */}
-      {mobileOpen && (
-        <div className="sm:hidden bg-white shadow-md w-full absolute top-24 left-0">
+      {/* {mobileOpen && (
+        <div className="sm:hidden shadow-md w-full h-screen backdrop-blur-2xl bg-white/20 absolute top-24 left-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <ul className="flex flex-col items-center py-4 gap-4">
               {navItems.map((item) => (
-                <li key={item}>
+                <div
+                  key={item}
+                  className="w-full text-center hover:backdrop-blur-2xl hover:bg-white/20 rounded-2xl"
+                >
                   <a
                     href={`#${item.toLowerCase()}`}
-                    className="text-blue-600 font-semibold hover:text-blue-800"
+                    className="text-blue-600 font-semibold text-2xl hover:text-blue-800 block my-2"
                     onClick={() => setMobileOpen(false)}
                   >
                     {item}
                   </a>
-                </li>
+                </div>
               ))}
               <li>
-                <button className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-800">
+                <button className="bg-blue-900 text-white px-6 py-2 rounded-md hover:bg-blue-800 cursor-pointer">
                   Get Contact
                 </button>
               </li>
             </ul>
           </div>
         </div>
-      )}
+      )} */}
     </header>
   );
 }
