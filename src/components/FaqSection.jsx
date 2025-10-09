@@ -74,7 +74,7 @@ const FaqSection = () => {
           </p>
         </div>
         <div className="flex flex-row-reverse justify-evenly  ">
-          <div className=" hidden md:block ">
+          <div className=" hidden lg:block ">
             <img
               src={FAQIMAGE}
               alt="QuestionMarkIcon"
@@ -82,11 +82,12 @@ const FaqSection = () => {
               className=" h-150"
             />
           </div>
-          <div className="mt-8  space-y-5 md:mt-16  ">
+          <div className="mt-8 space-y-5 md:mt-16  w-full md:w-[35rem]  ">
             {faq.map((item, index) => (
               <div
                 key={index}
-                className="transition-all duration-200 bg-white border border-gray-200 cursor-pointer hover:bg-blue-50  shadow-2xl shadow-blue-200 rounded-2 "
+                className="transition-colors duration-200 bg-white border border-gray-200 cursor-pointer
+                 hover:bg-blue-50 shadow-md hover:shadow-lg rounded-2"
               >
                 <button
                   type="button"
@@ -99,7 +100,7 @@ const FaqSection = () => {
                   </span>
 
                   <svg
-                    className={`w-6 h-6 text-orange-500 cursor-pointer ${
+                    className={`w-6 h-6 text-[#274990] cursor-pointer ${
                       item.open ? "rotate-180" : ""
                     }`}
                     xmlns="http://www.w3.org/2000/svg"

@@ -50,7 +50,7 @@ export function About() {
         About Us
       </h2>
 
-      <div className="relative z-10 container mx-auto flex flex-col md:flex-row items-center gap-10">
+      <div className="relative z-10 container mx-auto flex flex-col lg:flex-row items-center gap-10">
         {/* Top: Image (hidden on tablet) */}
         <div className="w-full rounded-3xl shadow-3xl ">
           <motion.img
