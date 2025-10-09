@@ -25,9 +25,7 @@ export function Header() {
     <header className="w-full fixed top-0 left-0 z-50 ">
       <div
         className={`px-2 py-2 sm:px-4 lg:px-6 xl:px-8 bg- ${
-          scrolled
-            ? "backdrop-blur-3xl backface-visible"
-            : ""
+          scrolled ? "backdrop-blur-3xl backface-visible" : ""
         } `}
       >
         <div className="h-fit flex items-center justify-between gap-2  ">
@@ -42,13 +40,17 @@ export function Header() {
 
           {/* Desktop Nav - only this gets blur on scroll */}
           <nav
-            className="hidden md:flex gap-2 xl:gap-5 text-[1.2rem] 2xl:text-[1.1vw] px-6 py-2 xl:px-10  rounded-3xl transition-all duration-300 bg-gradient-to-r from-[#151F5F] via-[#274990] to-[#3CAAE7] backdrop-blur-3xl"
+            className="hidden md:flex gap-2 xl:gap-5 text-[1.2rem] 2xl:text-[1.1vw]
+             px-6 py-2 
+            xl:px-10  rounded-3xl transition-all duration-300 
+            bg-gradient-to-r from-[#151F5F] via-[#274990] to-[#3CAAE7] 
+            backdrop-blur-3xl"
           >
             {navItems.map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="font-mono text-white hover:text-[#FF7D22] mx-1 xl:mx-3"
+                className="font-mono text-white mx-1 xl:mx-3"
               >
                 {item}
               </a>
@@ -56,14 +58,17 @@ export function Header() {
           </nav>
 
           <div className="hidden sm:block">
-            <button className="font-mono text-[1rem]  2xl:text-[1.1vw] px-4 md:px-6 py-2 xl:px-10  rounded-md text-white hover:text-[#FF7D22] bg-blue-600 whitespace-nowrap">
+            <button
+              className="font-mono text-[1rem]  2xl:text-[1.1vw] px-4 md:px-6 py-2 
+            xl:px-10  rounded-md text-white  bg-gradient-to-r from-[#151F5F] via-[#274990] to-[#3CAAE7]  whitespace-nowrap"
+            >
               Get Contact
             </button>
           </div>
 
           {/* Hamburger for mobile */}
           <button
-            className="sm:hidden text-white focus:outline-none cursor-pointer"
+            className="sm:hidden text-black focus:outline-none cursor-pointer"
             onClick={toggleMobileMenu}
           >
             <svg

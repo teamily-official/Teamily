@@ -7,7 +7,7 @@ import {
 import { servicesContent } from "../data/ServiceData";
 export function Footer() {
   return (
-    <footer className="h-fit w-full bg-blue-50 border-t-2 border-[#FF7D22]">
+    <footer className=" w-full h-[3px] bg-gradient-to-r from-[#151F5F] via-[#274990] to-[#3CAAE7] rounded-t-lg">
       <div className="flex flex-col gap-2 px-4 py-4 lg:py-8 lg:px-2">
         <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 px-2  ">
           <div className="cursor-pointer hidden md:flex-2/8 md:flex justify-center items-center h-fit w-fit">
@@ -23,7 +23,7 @@ export function Footer() {
                 {CompanyDetails.map((items, index) => (
                   <li
                     key={index}
-                    className="text-lg text-center text-gray-700 transition hover:text-[#FF7D22] cursor-pointer"
+                    className="text-lg text-center text-gray-700 transition hover:text-[#274990] cursor-pointer"
                   >
                     <a href={items.link}>{items.title}</a>
                   </li>
@@ -40,7 +40,7 @@ export function Footer() {
                 {servicesContent.map((items, index) => (
                   <li
                     key={index}
-                    className="text-lg text-center text-gray-700 transition hover:text-[#FF7D22] cursor-pointer"
+                    className="text-lg text-center text-gray-700 transition hover:text-[#274990] cursor-pointer"
                   >
                     {items.title}
                   </li>
@@ -57,7 +57,7 @@ export function Footer() {
                 {ContactDetails.map((items, index) => (
                   <li
                     key={index}
-                    className="text-lg text-center text-gray-700 transition hover:text-[#FF7D22] cursor-pointer"
+                    className="text-lg text-center text-gray-700 transition hover:text-[#274990] cursor-pointer"
                   >
                     {items.title}
                   </li>
@@ -75,7 +75,7 @@ export function Footer() {
             <p className="text-md text-gray-500 text-nowrap select-none">
               <span className="text-bold text-black ">&copy;</span>{" "}
               {new Date().getFullYear()}{" "}
-              <span className="text-[#3CAAE7] hover:text-[#FF7D22]">
+              <span className="text-[#3CAAE7] hover:text-[#274990]">
                 Teamily
               </span>
               . All rights reserved.
