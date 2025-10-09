@@ -1,4 +1,4 @@
-import Companylogo from "../../public/Logo/CompanyLogo1.png";
+import Companylogo from "../../public/Logo/TeamilyLogo.png";
 import {
   CompanyDetails,
   ContactDetails,
@@ -7,29 +7,23 @@ import {
 import { servicesContent } from "../data/ServiceData";
 export function Footer() {
   return (
-    <footer className="bg-blue-50">
-      <div className="">
-        <div className="flex flex-col md:flex-row items-center lg:items-start lg:justify-evenly">
-          {/* Logo Section */}
-          <div className="mt-10 lg:mt-20">
-            <img
-              src={Companylogo}
-              alt="Company Logo"
-              width={210}
-              className="mx-auto lg:mx-0"
-            />
+    <footer className="h-fit w-full bg-blue-50 border-t-2 border-[#FF7D22]">
+      <div className="flex flex-col gap-2 px-4 py-4 lg:py-8 lg:px-2">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 px-2  ">
+          <div className="cursor-pointer hidden md:flex-2/8 md:flex justify-center items-center h-fit w-fit">
+            <img src={Companylogo} alt="Company Logo" width={210} />
           </div>
-
-          {/* Info Grid */}
-          <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-6 text-center md:text-left">
+          <div className="flex-6/8 flex flex-col md:flex-row justify-center gap-5 items-center md:justify-between md:items-start ">
             {/* Company Section */}
             <div>
-              <p className="font-medium text-blue-800 text-2xl">Company</p>
-              <ul className="mt-6 space-y-4 text-sm">
+              <p className="flex justify-center font-medium text-blue-800 text-2xl text-nowrap">
+                WHO, we are
+              </p>
+              <ul className="text-center md:text-start space-y-4 py-4 text-sm">
                 {CompanyDetails.map((items, index) => (
                   <li
                     key={index}
-                    className="text-lg text-gray-700 transition hover:text-blue-500 cursor-pointer"
+                    className="text-lg text-center text-gray-700 transition hover:text-[#FF7D22] cursor-pointer"
                   >
                     <a href={items.link}>{items.title}</a>
                   </li>
@@ -37,29 +31,33 @@ export function Footer() {
               </ul>
             </div>
 
-            {/* Contact Section */}
-            <div>
-              <p className="font-medium text-blue-800 text-2xl">Contact</p>
-              <ul className="mt-6 space-y-4 text-sm">
-                {ContactDetails.map((items, index) => (
-                  <li
-                    key={index}
-                    className="text-lg text-gray-700 transition hover:text-blue-500 cursor-pointer"
-                  >
-                    {items.title}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
             {/* Services Section */}
             <div>
-              <p className="font-medium text-blue-800 text-2xl">Services</p>
-              <ul className="mt-6 space-y-4 text-sm">
+              <p className="flex justify-center  font-medium text-blue-800 text-2xl text-nowrap">
+                WHAT, we do
+              </p>
+              <ul className="text-center md:text-start space-y-4 py-4 text-sm">
                 {servicesContent.map((items, index) => (
                   <li
                     key={index}
-                    className="text-lg text-gray-700 transition hover:text-blue-500 cursor-pointer"
+                    className="text-lg text-center text-gray-700 transition hover:text-[#FF7D22] cursor-pointer"
+                  >
+                    {items.title}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact Section */}
+            <div>
+              <p className="flex justify-center  font-medium text-blue-800 text-2xl text-nowrap">
+                Connect with US
+              </p>
+              <ul className="text-center md:text-start space-y-4 py-4 text-sm">
+                {ContactDetails.map((items, index) => (
+                  <li
+                    key={index}
+                    className="text-lg text-center text-gray-700 transition hover:text-[#FF7D22] cursor-pointer"
                   >
                     {items.title}
                   </li>
@@ -69,17 +67,21 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 border-t-2 border-blue-100 pt-8 mx-30">
-          <div className="text-center">
-            <p className="text-md text-gray-500">
-              &copy; 2025. Teamily. All rights reserved.
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-0 sm:justify-between mt-2 border-t-2 border-blue-100 pt-4 px-2 sm:mx-30">
+          <div className="cursor-pointer">
+            <img src={Companylogo} alt="Company Logo" width={30} />
+          </div>
+          <div className="cursor-pointer">
+            <p className="text-md text-gray-500 text-nowrap select-none">
+              <span className="text-bold text-black ">&copy;</span>{" "}
+              {new Date().getFullYear()}{" "}
+              <span className="text-[#3CAAE7] hover:text-[#FF7D22]">
+                Teamily
+              </span>
+              . All rights reserved.
             </p>
           </div>
         </div>
-        {/* Optional: Copyright / Bottom text */}
-        {/* <div className="mt-10 text-center text-sm text-gray-500">
-          &copy; {new Date().getFullYear()} TeamILy. All rights reserved.
-        </div> */}
       </div>
     </footer>
   );
