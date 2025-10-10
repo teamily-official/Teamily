@@ -1,4 +1,4 @@
-import Companylogo from "../../public/Logo/TeamilyLogo.png";
+import Companylogo from "../../public/Logo/Teamily Footer.png";
 import {
   CompanyDetails,
   ContactDetails,
@@ -8,10 +8,15 @@ import { servicesContent } from "../data/ServiceData";
 export function Footer() {
   return (
     <footer className=" w-full h-[3px] bg-gradient-to-r from-[#151F5F] via-[#274990] to-[#3CAAE7] rounded-t-lg">
-      <div className="flex flex-col gap-2 px-4 py-4 lg:py-8 lg:px-2">
-        <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 px-2  ">
-          <div className="cursor-pointer hidden md:flex-2/8 md:flex justify-center items-center h-fit w-fit">
-            <img src={Companylogo} alt="Company Logo" width={210} />
+      <div className="flex flex-col gap-2 px-4 py-4 lg:py-8 lg:px-10">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4">
+          <div className="cursor-pointer hidden md:flex-2/8 md:flex   items-center h-fit w-fit">
+            <img
+              src={Companylogo}
+              alt="Company Logo"
+              width={180}
+              height={200}
+            />
           </div>
           <div className="flex-6/8 flex flex-col md:flex-row justify-center gap-5 items-center md:justify-between md:items-start ">
             {/* Company Section */}
@@ -67,10 +72,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-0 sm:justify-between mt-2 border-t-2 border-blue-100 pt-4 px-2 sm:mx-30">
-          <div className="cursor-pointer">
-            <img src={Companylogo} alt="Company Logo" width={30} />
-          </div>
+        {/* <div className="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-0 sm:justify-between mt-2 border-t-2 border-blue-100 pt-4 px-2 sm:mx-30">
           <div className="cursor-pointer">
             <p className="text-md text-gray-500 text-nowrap select-none">
               <span className="text-bold text-black ">&copy;</span>{" "}
@@ -81,7 +83,7 @@ export function Footer() {
               . All rights reserved.
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </footer>
   );
