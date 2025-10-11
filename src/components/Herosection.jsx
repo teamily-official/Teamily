@@ -68,10 +68,13 @@ void main() {
 `;
 
 const HeroSectionContent = {
-  Heading: "Your Business Deserves Digital Solutions That Work as Hard as You Do",
+  Heading:
+    "Your Business Deserves Digital Solutions That Work as Hard as You Do",
   subHeading:
     "We design stunning, conversion-focused digital solutions that impress visitors and turn them into loyal customers.",
   button: "Get Started Today",
+  microDescription:
+    "From web and app development to ongoing maintenance, our expert team delivers solutions tailored for your business success.",
 };
 
 export default function HeroSection() {
@@ -175,7 +178,7 @@ export default function HeroSection() {
     <div
       id="home"
       ref={containerRef}
-      className="relative w-full h-[70vh] sm:h-[75vh] md:h-[80vh] lg:h-[90vh] xl:h-screen 2xl:h-screen
+      className="relative w-full h-[100vh] sm:h-[75vh] md:h-[80vh] lg:h-[90vh] xl:h-screen 2xl:h-screen
                  bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 text-white flex items-center justify-center overflow-hidden"
     >
       {/* Overlay for particles */}
@@ -187,7 +190,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold mb-4 leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold mb-4 leading-tight"
         >
           {HeroSectionContent.Heading}
         </motion.h1>
@@ -202,13 +205,22 @@ export default function HeroSection() {
         </motion.p>
 
         <motion.a
-          href="#contact"
+          href="https://forms.zohopublic.in/teamilyofficialzoho1/form/ContactUs/formperma/1P9DiLkxIiUgw_urpS6C7d8ATYzEZMINvxTIhXtN0r0"
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.3 }}
           className="bg-white text-blue-800 font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
         >
           {HeroSectionContent.button}
         </motion.a>
+
+        <motion.p
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
+          className="text-base  text-gray-300 max-w-xl sm:max-w-2xl md:max-w-3xl mt-4 leading-relaxed"
+        >
+          {HeroSectionContent.microDescription}
+        </motion.p>
       </div>
     </div>
   );

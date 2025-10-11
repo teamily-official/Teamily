@@ -51,7 +51,7 @@ function App() {
           viewport={{ once: false }}
         >
           {/* <ServicesSection /> */}
-          <div id="service" className="bg-gray-50 py-16 px-6">
+          <div  className="bg-gray-50 py-16 px-6">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-900 mb-12 transition-transform duration-300 hover:scale-105">
               Our Services
             </h2>

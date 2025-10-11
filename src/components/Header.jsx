@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import logo from "../../public/Logo/TeamilyLogo.png";
 
-const navItems = ["Home", "About", "Services", "Contact"];
+const navItems = ["Home", "About", "Services", "Project"];
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -59,8 +59,14 @@ export function Header() {
 
           <div className="hidden sm:block">
             <button
-              className="font-mono text-[1rem]  2xl:text-[1.1vw] px-4 md:px-6 py-2 
-            xl:px-10  rounded-md text-white  bg-gradient-to-r from-[#151F5F] via-[#274990] to-[#3CAAE7]  whitespace-nowrap"
+              className="font-mono text-[1rem] 2xl:text-[1.1vw] px-4 md:px-6 py-2 
+    xl:px-10 rounded-md text-white bg-gradient-to-r from-[#151F5F] via-[#274990] to-[#3CAAE7] whitespace-nowrap"
+              onClick={() =>
+                window.open(
+                  "https://forms.zohopublic.in/teamilyofficialzoho1/form/ContactUs/formperma/1P9DiLkxIiUgw_urpS6C7d8ATYzEZMINvxTIhXtN0r0",
+                  "_blank"
+                )
+              }
             >
               Get Contact
             </button>
@@ -68,7 +74,7 @@ export function Header() {
 
           {/* Hamburger for mobile */}
           <button
-            className="sm:hidden text-black focus:outline-none cursor-pointer"
+            className="sm:hidden text-[#151F5F] focus:outline-none cursor-pointer"
             onClick={toggleMobileMenu}
           >
             <svg
@@ -89,7 +95,7 @@ export function Header() {
       </div>
 
       {/* Mobile Menu */}
-      {/* {mobileOpen && (
+      {mobileOpen && (
         <div className="sm:hidden shadow-md w-full h-screen backdrop-blur-2xl bg-white/20 absolute top-24 left-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <ul className="flex flex-col items-center py-4 gap-4">
@@ -108,14 +114,22 @@ export function Header() {
                 </div>
               ))}
               <li>
-                <button className="bg-blue-900 text-white px-6 py-2 rounded-md hover:bg-blue-800 cursor-pointer">
+                <button
+                  className="bg-blue-900 text-white px-6 py-2 rounded-md hover:bg-blue-800 cursor-pointer"
+                  onClick={() =>
+                    window.open(
+                      "https://forms.zohopublic.in/teamilyofficialzoho1/form/ContactUs/formperma/1P9DiLkxIiUgw_urpS6C7d8ATYzEZMINvxTIhXtN0r0",
+                      "_blank"
+                    )
+                  }
+                >
                   Get Contact
                 </button>
               </li>
             </ul>
           </div>
         </div>
-      )} */}
+      )}
     </header>
   );
 }

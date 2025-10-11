@@ -62,6 +62,7 @@ export function Footer() {
                 {ContactDetails.map((items, index) => (
                   <li
                     key={index}
+                    onClick={() => window.open(items.link, "_blank")}
                     className="text-lg text-center text-gray-700 transition hover:text-[#274990] cursor-pointer"
                   >
                     {items.title}

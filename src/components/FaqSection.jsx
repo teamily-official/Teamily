@@ -12,7 +12,7 @@ const FaqSection = () => {
     {
       question: "Is my data safe with you?",
       answer:
-        'Absolutely! We take your privacy seriously and use advanced, industry-standard encryption to protect your information. Learn more about our <a href="#" class="text-blue-600 transition-all duration-200 hover:underline">data security measures</a>.”.',
+        'Absolutely! We take your privacy seriously and use advanced, industry-standard encryption to protect your information. Learn more about our <a href="#" class="text-blue-600 transition-all duration-200 hover:underline">data security measures</a>.',
       open: false,
     },
     {
@@ -24,7 +24,7 @@ const FaqSection = () => {
     {
       question: "Can I upgrade or change my plan anytime?",
       answer:
-        "Yes! You can upgrade, downgrade, or cancel your plan anytime directly from your dashboard—no hidden fees or complex steps",
+        "Yes! You can upgrade, downgrade, or cancel your plan anytime directly from your dashboard—no hidden fees or complex steps.",
       open: false,
     },
     {
@@ -36,13 +36,13 @@ const FaqSection = () => {
     {
       question: "How soon can I expect results?",
       answer:
-        '“Most clients start seeing measurable results within just a few days. Our streamlined process ensures <a href="#" class="text-blue-600 transition-all duration-200 hover:underline">fast and effective outcomes</a> for your project',
+        'Most clients start seeing measurable results within just a few days. Our streamlined process ensures <a href="#" class="text-blue-600 transition-all duration-200 hover:underline">fast and effective outcomes</a> for your project.',
       open: false,
     },
     {
       question: "Do you provide support if I need help?",
       answer:
-        '“Definitely! Our dedicated support team is always here for you. Reach us anytime via <a href="#" class="text-blue-600 transition-all duration-200 hover:underline">live chat</a> or <a href="#" class="text-blue-600 transition-all duration-200 hover:underline">email</a> for quick assistance.',
+        'Definitely! Our dedicated support team is always here for you. Reach us anytime via <a href="#" class="text-blue-600 transition-all duration-200 hover:underline">live chat</a> or <a href="#" class="text-blue-600 transition-all duration-200 hover:underline">email</a> for quick assistance.',
       open: false,
     },
   ]);
@@ -68,8 +68,8 @@ const FaqSection = () => {
           <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
             Frequently Asked Questions
           </h2>
-          <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600">
-            Everything You Need to Know About Teamily Services
+          <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed sm:text-1xl lg:text-2xl text-gray-600">
+         Everything You Need to Know About Teamily Services.
           </p>
         </div>
         <div className="flex flex-row-reverse justify-evenly  ">
@@ -127,15 +127,17 @@ const FaqSection = () => {
             ))}
           </div>
         </div>
-        <p className="text-center text-gray-600 textbase mt-9">
-          Didn’t find the answer you are looking for?{" "}
+        <p className="text-center text-gray-600 text-base mt-9">
+          Didn’t find the answer you’re looking for?{" "}
           <a
-            href="#"
-            title=""
-            className="font-medium text-blue-600 transition-all duration-200 hover:text-blue-700 focus:text-blue-700 hover:underline"
+            href="https://forms.zohopublic.in/teamilyofficialzoho1/form/ContactUs/formperma/1P9DiLkxIiUgw_urpS6C7d8ATYzEZMINvxTIhXtN0r0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 transition-all duration-200 hover:underline"
           >
-            Contact our support
-          </a>
+            Contact our support team
+          </a>{" "}
+          — we’re happy to help!
         </p>
       </div>
     </section>
