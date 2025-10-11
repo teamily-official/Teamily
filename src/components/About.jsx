@@ -12,7 +12,7 @@ const contentData = [
   },
   {
     title: "Building Partnerships, Shaping Futures",
-    desc: "We go beyond delivering services — we build lasting partnerships. Whether you’re a startup or an established business, Teamily is your trusted ally in navigating the digital landscape and achieving meaningful results",
+    desc: "We go beyond delivering services — we build lasting partnerships. Whether you’re a startup or an established business, Teamily is your trusted ally in navigating the digital landscape and achieving meaningful results.",
   },
 ];
 

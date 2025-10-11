@@ -1,37 +1,37 @@
 export const CompanyDetails = [
   {
     title: "About",
-    link: "#",
+    link: "#about",
   },
   {
     title: "Service",
-    link: "#",
+    link: "#services",
   },
   {
-    title: "Our Work",
-    link: "#",
+    title: "Projects",
+    link: "#project",
   },
-  {
-    title: "Blog",
-    link: "#",
-  },
+  // {
+  //   title: "Blog",
+  //   link: "#",
+  // },
 ];
 export const ContactDetails = [
   {
-    title: "Email",
-    link: "#",
+    title: "teamilyofficial@zohomail.in",
+    link: "teamilyofficial@zohomail.in",
   },
-  {
-    title: "Contact Number",
-    link: "#",
-  },
-  {
-    title: "Address",
-    link: "#",
-  },
+  // {
+  //   title: "Contact Number",
+  //   link: "#",
+  // },
+  // {
+  //   title: "Address",
+  //   link: "#",
+  // },
   {
     title: "Website",
-    link: "#",
+    link: "https://teamily.vercel.app/",
   },
 ];
 export const LegalDetails = [
