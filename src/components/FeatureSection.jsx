@@ -1,19 +1,18 @@
-
-
 export default function FeatureSection() {
   const features = [
     {
-      title: "Seamless Collaboration",
-      desc: "Work together with ease and keep your projects organized.",
+      title: "Expertise You Can Trust",
+      desc: "With years of experience and a skilled team, we deliver solutions that combine creativity, precision, and industry best practices to help your business succeed.",
     },
     {
-      title: "Smart Technology",
-      desc: "AI-driven tools to optimize workflows and decision-making.",
+      title: "Innovative Solutions",
+      desc: "“We harness the latest technologies and creative strategies to provide forward-thinking solutions that keep your business ahead in a constantly evolving digital world.",
     },
     {
-      title: "Scalable Growth",
-      desc: "From startups to enterprises, Teamily grows with you.",
+      title: "Client-Centric Approach",
+      desc: "Your goals are our priority. From clear communication to timely delivery, we ensure every project is tailored to meet your unique needs and drive real results.",
     },
+    
   ];
 
   return (

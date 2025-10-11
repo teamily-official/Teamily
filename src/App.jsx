@@ -125,10 +125,11 @@ function App() {
         whileInView="visible"
         variants={fadeUp}
         transition={{ duration: 0.6, delay: 0.2 }}
-        viewport={{ once: false }}
+        viewport={{ once: true }} // ✅ fix: animate only once
       >
         <Footer />
       </m.div>
+
       {/* <SplashCursor /> */}
     </div>
   );
