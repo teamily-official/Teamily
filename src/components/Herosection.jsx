@@ -67,15 +67,12 @@ void main() {
 }
 `;
 
-
-
-const HeroSectionContent={
-   
-  Heading:"Your Business Deserves a Website That Works as Hard as You Do",
-  subHeading : "We design stunning, conversion-focused websites that impress visitors and turn them into customers.",
-  button:"Get Your Website Today"
-}
-
+const HeroSectionContent = {
+  Heading: "Your Business Deserves Digital Solutions That Work as Hard as You Do",
+  subHeading:
+    "We design stunning, conversion-focused digital solutions that impress visitors and turn them into loyal customers.",
+  button: "Get Started Today",
+};
 
 export default function HeroSection() {
   const containerRef = useRef(null);
@@ -201,8 +198,7 @@ export default function HeroSection() {
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
           className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-gray-300 max-w-xl sm:max-w-2xl md:max-w-3xl mb-8 leading-relaxed"
         >
-        
-        {HeroSectionContent.subHeading}
+          {HeroSectionContent.subHeading}
         </motion.p>
 
         <motion.a
@@ -211,7 +207,7 @@ export default function HeroSection() {
           transition={{ duration: 0.3 }}
           className="bg-white text-blue-800 font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
         >
-  {HeroSectionContent.button}
+          {HeroSectionContent.button}
         </motion.a>
       </div>
     </div>

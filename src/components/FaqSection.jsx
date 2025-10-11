@@ -6,43 +6,43 @@ const FaqSection = () => {
     {
       question: "How do I get started with your service?",
       answer:
-        'Getting started is easy! Simply <a href="#" class="text-blue-600 transition-all duration-200 hover:underline">create an account</a> and follow the quick setup steps. You’ll be up and running in minutes!',
+        'Getting started is quick and simple! Just <a href="#" class="text-blue-600 transition-all duration-200 hover:underline">create an account</a>, complete the easy setup steps, and you’ll be ready to go within minutes.',
       open: false,
     },
     {
-      question: "Is my data safe with us?",
+      question: "Is my data safe with you?",
       answer:
-        'Absolutely! We prioritize security and use industry-standard encryption. Learn more about our <a href="#" class="text-blue-600 transition-all duration-200 hover:underline">data protection measures</a>.',
+        'Absolutely! We take your privacy seriously and use advanced, industry-standard encryption to protect your information. Learn more about our <a href="#" class="text-blue-600 transition-all duration-200 hover:underline">data security measures</a>.”.',
       open: false,
     },
     {
-      question: "What payment methods do we accept?",
+      question: "What payment methods do you accept?",
       answer:
-        'We accept multiple payment methods including <a href="#" class="text-blue-600 transition-all duration-200 hover:underline">Credit/Debit cards</a> and PayPal. Payments are secure and hassle-free.',
+        'We accept all major <a href="#" class="text-blue-600 transition-all duration-200 hover:underline">credit/debit cards</a> and PayPal for your convenience. Every transaction is processed securely and without hassle.',
       open: false,
     },
     {
       question: "Can I upgrade or change my plan anytime?",
       answer:
-        "Yes! You can upgrade, downgrade, or cancel your plan anytime directly from your dashboard. No hidden fees or complicated processes.",
+        "Yes! You can upgrade, downgrade, or cancel your plan anytime directly from your dashboard—no hidden fees or complex steps",
       open: false,
     },
     {
       question: "What makes your service different from others?",
       answer:
-        'We focus on simplicity, speed, and reliability. Unlike others, we offer <a href="#" class="text-blue-600 transition-all duration-200 hover:underline">personalized support</a> and fast onboarding to help you succeed.',
+        'We combine simplicity, speed, and reliability with <a href="#" class="text-blue-600 transition-all duration-200 hover:underline">personalized support</a> and rapid onboarding to ensure your success from day one.',
       open: false,
     },
     {
-      question: "How quickly can I expect results?",
+      question: "How soon can I expect results?",
       answer:
-        'Most of our clients see results within the first few days. Our streamlined process ensures <a href="#" class="text-blue-600 transition-all duration-200 hover:underline">fast and measurable outcomes</a>.',
+        '“Most clients start seeing measurable results within just a few days. Our streamlined process ensures <a href="#" class="text-blue-600 transition-all duration-200 hover:underline">fast and effective outcomes</a> for your project',
       open: false,
     },
     {
-      question: "Do you offer support if I get stuck?",
+      question: "Do you provide support if I need help?",
       answer:
-        'Yes! Our friendly support team is always ready to help. Contact us via <a href="#" class="text-blue-600 transition-all duration-200 hover:underline">chat or email</a> anytime.',
+        '“Definitely! Our dedicated support team is always here for you. Reach us anytime via <a href="#" class="text-blue-600 transition-all duration-200 hover:underline">live chat</a> or <a href="#" class="text-blue-600 transition-all duration-200 hover:underline">email</a> for quick assistance.',
       open: false,
     },
   ]);
@@ -69,8 +69,7 @@ const FaqSection = () => {
             Frequently Asked Questions
           </h2>
           <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600">
-            Everything you need to know about getting started and using our
-            service
+            Everything You Need to Know About Teamily Services
           </p>
         </div>
         <div className="flex flex-row-reverse justify-evenly  ">

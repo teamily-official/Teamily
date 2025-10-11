@@ -1,4 +1,4 @@
-import React from "react";
+
 import {
   FaMobileAlt,
   FaRocket,
@@ -13,33 +13,26 @@ const services = [
     icon: <FaMobileAlt className="text-white text-4xl mb-4" />,
     title: "App Development",
     description: `
-We build user-friendly mobile and web apps.  
-Our apps are fast, secure, and scalable.  
-We design apps that match your business goals.  
-From idea to launch, we handle everything.  
-Get modern apps that customers love to use.  
+We create cross-platform mobile applications that ensure a seamless user
+experience, featuring intuitive UI, scalable performance, and robust functionality tailored to
+your business needs.  
 `,
   },
   {
     icon: <FaRocket className="text-white text-4xl mb-4" />,
     title: "Website Deployment",
-    description: `
-We ensure smooth software deployment for your business.  
-Our experts make your app live without downtime.  
-We handle server setup, testing, and configuration.  
-Deployment is done with security and stability in mind.  
-Your app goes from development to production easily.  
+    description: `We provide comprehensive web application development services, delivering
+custom-built, responsive, and fast-loading websites designed to drive business growth and
+enhance user experience.  
 `,
   },
   {
     icon: <FaTools className="text-white text-4xl mb-4" />,
     title: "Website and App Maintenance",
     description: `
-We keep your website updated and secure.  
-Our team fixes bugs and performance issues.  
-We provide regular backups and monitoring.  
-Updates ensure your site stays modern and fast.  
-Enjoy hassle-free website management with us.  
+We provide reliable maintenance services for websites and apps, including
+regular updates, bug fixes, performance optimization, and security enhancements to ensure
+your digital solutions run smoothly and efficiently.  
 `,
   },
   {
@@ -68,11 +61,9 @@ Grow your online business with our solutions.
     icon: <FaLaptopCode className="text-white text-4xl mb-4" />,
     title: "Web Designing & Development",
     description: `
-We design modern, responsive, and stylish websites.  
-Our websites work on all devices and screens.  
-We focus on user experience and creativity.  
-Every design reflects your brand identity.  
-Get websites that impress and engage customers.  
+We craft visually appealing and user-friendly designs for websites and apps,
+ensuring a seamless user experience while maintaining consistent branding that reflects your
+business identity.  
 `,
   },
 ];

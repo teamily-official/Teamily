@@ -1,18 +1,18 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
- import AboutUsImage from "../assets/AboutUsImages/AboutUs.png"
+import AboutUsImage from "../assets/AboutUsImages/AboutUs.png";
 const contentData = [
   {
-    title: "Your Success, Our Ultimate Goal",
-    desc: "At Teamily, we believe every idea — whether big or small — has the potential to create lasting impact. Your growth fuels our passion, and with a focus on innovation, creativity, and quality, we deliver digital solutions that elevate your brand and drive real results.",
+    title: "Empowering Ideas, Driving Growth",
+    desc: "At Teamily, we transform innovative ideas into impactful digital solutions. Every project we undertake is fueled by creativity, quality, and a commitment to help your business achieve tangible growth and lasting success.",
   },
   {
-    title: "Masters of the Digital World",
-    desc: "Fueled by creativity and powered by technology, our team crafts meaningful experiences that transform brand connections. From seamless collaboration to tailored strategies, we help businesses thrive in the ever-changing digital landscape.",
+    title: "Experts in Digital Innovation",
+    desc: "Our team combines creativity with cutting-edge technology to craft seamless digital experiences. From tailored strategies to flawless execution, we ensure your brand stands out in today’s fast-paced digital world.",
   },
   {
-    title: "Turning Clicks into Brand Triumphs",
-    desc: "Whether you’re a startup taking the first step or an enterprise scaling new heights, Teamily is your trusted partner. We’re not just about delivering services — we’re about building lasting partnerships and shaping the digital future together.",
+    title: "Building Partnerships, Shaping Futures",
+    desc: "We go beyond delivering services — we build lasting partnerships. Whether you’re a startup or an established business, Teamily is your trusted ally in navigating the digital landscape and achieving meaningful results",
   },
 ];
 
