@@ -1,71 +1,93 @@
 import Companylogo from "../../public/Logo/Teamily Footer.png";
-import {
-  CompanyDetails,
-  ContactDetails,
-  // LegalDetails,
-} from "../data/FooterSectionData";
+import { CompanyDetails, ContactDetails } from "../data/FooterSectionData";
 import { servicesContent } from "../data/ServiceData";
+
 export function Footer() {
   return (
-    <footer className=" w-full h-[3px] bg-gradient-to-r from-[#151F5F] via-[#274990] to-[#3CAAE7] rounded-t-lg">
-      <div className="flex flex-col gap-2 px-4 py-4 lg:py-8 lg:px-10">
-        <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4">
-          <div className="cursor-pointer hidden md:flex-2/8 md:flex   items-center h-fit w-fit">
+    <footer style={{ background: "var(--c-navy)" }} className="w-full">
+      {/* Top gradient accent bar */}
+      <div className="h-[2px] w-full" style={{ background: "var(--grad-accent)" }} />
+
+      <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20 lg:px-12">
+        <div className="flex flex-col md:flex-row gap-12 md:gap-8 justify-between">
+
+          {/* Brand column */}
+          <div className="flex flex-col gap-5 md:max-w-[200px]">
             <img
               src={Companylogo}
-              alt="Company Logo"
-              width={180}
-              height={200}
+              alt="Teamily Logo"
+              loading="lazy"
+              width={140}
+              className="opacity-90"
             />
+            <p className="text-sm leading-relaxed" style={{ color: "var(--c-text-muted)" }}>
+              Professional IT &amp; software development for businesses worldwide.
+            </p>
           </div>
-          <div className="flex-6/8 flex flex-col md:flex-row justify-center gap-5 items-center md:justify-between md:items-start ">
-            {/* Company Section */}
+
+          {/* Links columns */}
+          <div className="flex flex-wrap gap-10 md:gap-16">
+            {/* Who We Are */}
             <div>
-              <p className="flex justify-center font-medium text-blue-800 text-2xl text-nowrap">
-                WHO, we are
-              </p>
-              <ul className="text-center md:text-start space-y-4 py-4 text-sm">
-                {CompanyDetails.map((items, index) => (
-                  <li
-                    key={index}
-                    className="text-lg text-center text-gray-700 transition hover:text-[#274990] cursor-pointer"
-                  >
-                    <a href={items.link}>{items.title}</a>
+              <h4
+                className="text-xs font-bold uppercase tracking-widest mb-5"
+                style={{ color: "var(--c-sky)" }}
+              >
+                Who We Are
+              </h4>
+              <ul className="space-y-3">
+                {CompanyDetails.map((item, index) => (
+                  <li key={index}>
+                    <a
+                      href={item.link}
+                      className="text-sm transition-colors duration-200 hover:text-white"
+                      style={{ color: "var(--c-text-muted)" }}
+                    >
+                      {item.title}
+                    </a>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Services Section */}
+            {/* What We Do */}
             <div>
-              <p className="flex justify-center  font-medium text-blue-800 text-2xl text-nowrap">
-                WHAT, we do
-              </p>
-              <ul className="text-center md:text-start space-y-4 py-4 text-sm">
-                {servicesContent.map((items, index) => (
+              <h4
+                className="text-xs font-bold uppercase tracking-widest mb-5"
+                style={{ color: "var(--c-sky)" }}
+              >
+                What We Do
+              </h4>
+              <ul className="space-y-3">
+                {servicesContent.map((item, index) => (
                   <li
                     key={index}
-                    className="text-lg text-center text-gray-700 transition hover:text-[#274990] cursor-pointer"
+                    className="text-sm cursor-pointer transition-colors duration-200 hover:text-white"
+                    style={{ color: "var(--c-text-muted)" }}
                   >
-                    {items.title}
+                    {item.title}
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Contact Section */}
+            {/* Contact */}
             <div>
-              <p className="flex justify-center  font-medium text-blue-800 text-2xl text-nowrap">
-                Connect with US
-              </p>
-              <ul className="text-center md:text-start space-y-4 py-4 text-sm">
-                {ContactDetails.map((items, index) => (
+              <h4
+                className="text-xs font-bold uppercase tracking-widest mb-5"
+                style={{ color: "var(--c-sky)" }}
+              >
+                Contact
+              </h4>
+              <ul className="space-y-3">
+                {ContactDetails.map((item, index) => (
                   <li
                     key={index}
-                    onClick={() => window.open(items.link, "_blank")}
-                    className="text-lg text-center text-gray-700 transition hover:text-[#274990] cursor-pointer"
+                    onClick={() => window.open(item.link, "_blank")}
+                    className="text-sm cursor-pointer transition-colors duration-200 hover:text-white"
+                    style={{ color: "var(--c-text-muted)" }}
                   >
-                    {items.title}
+                    {item.title}
                   </li>
                 ))}
               </ul>
@@ -73,18 +95,25 @@ export function Footer() {
           </div>
         </div>
 
-        {/* <div className="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-0 sm:justify-between mt-2 border-t-2 border-blue-100 pt-4 px-2 sm:mx-30">
-          <div className="cursor-pointer">
-            <p className="text-md text-gray-500 text-nowrap select-none">
-              <span className="text-bold text-black ">&copy;</span>{" "}
-              {new Date().getFullYear()}{" "}
-              <span className="text-[#3CAAE7] hover:text-[#274990]">
-                Teamily
-              </span>
-              . All rights reserved.
-            </p>
-          </div>
-        </div> */}
+        {/* Bottom bar */}
+        <div
+          className="mt-14 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}
+        >
+          <p className="text-xs select-none" style={{ color: "var(--c-text-muted)" }}>
+            &copy; {new Date().getFullYear()}{" "}
+            <span
+              className="font-semibold cursor-pointer hover:text-white transition-colors"
+              style={{ color: "var(--c-sky)" }}
+            >
+              Teamily
+            </span>
+            . All rights reserved.
+          </p>
+          <p className="text-xs" style={{ color: "#475569" }}>
+            Built with ❤️ for businesses worldwide.
+          </p>
+        </div>
       </div>
     </footer>
   );

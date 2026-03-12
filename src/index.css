@@ -1,6 +1,63 @@
 @import "tailwindcss";
 
+/* =====================================================
+   TEAMILY — Indigo Slate Design System
+   =====================================================
+   Primary:       #0D1B2A  (Midnight Navy)
+   Secondary:     #4F6EF7  (Soft Indigo)
+   Accent:        #38BDF8  (Sky Blue)
+   Background:    #F8FAFC  (Pearl White)
+   Card:          #FFFFFF  (Pure White)
+   Border:        #E2E8F0  (Cloud Gray)
+   Text Heading:  #1E293B  (Graphite)
+   Text Body:     #64748B  (Cool Gray)
+   Hover Surface: #EEF2FF  (Indigo Tint)
+   ===================================================== */
 
+:root {
+  scroll-padding-top: 7rem;
+
+  /* — Core Palette — */
+  --c-navy: #0D1B2A;
+  /* Midnight Navy — hero, footer, workflow bg */
+  --c-indigo: #4F6EF7;
+  /* Soft Indigo — CTA, accents, active states */
+  --c-indigo-dark: #4338CA;
+  /* Deeper Indigo — button hover */
+  --c-sky: #38BDF8;
+  /* Sky Blue — icon glow, tag, marquee accent */
+  --c-bg: #F8FAFC;
+  /* Pearl White — page & section bg */
+  --c-card: #FFFFFF;
+  /* Pure White — all card surfaces */
+  --c-border: #E2E8F0;
+  /* Cloud Gray — card borders, dividers */
+  --c-hover-bg: #EEF2FF;
+  /* Indigo Tint — hover surface */
+  --c-text-head: #1E293B;
+  /* Graphite — headings */
+  --c-text-body: #64748B;
+  /* Cool Gray — body text */
+  --c-text-muted: #94A3B8;
+  /* Slate-400 — meta text, footer links */
+
+  /* — Shadows — */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.05), 0 8px 24px rgba(79, 110, 247, 0.06);
+  --shadow-hover: 0 4px 20px rgba(79, 110, 247, 0.14);
+  --shadow-btn: 0 4px 14px rgba(79, 110, 247, 0.35);
+
+  /* — Gradients — */
+  --grad-nav: linear-gradient(to right, rgba(13, 27, 42, 0.95), rgba(79, 110, 247, 0.9), rgba(56, 189, 248, 0.85));
+  --grad-hero: linear-gradient(135deg, #0D1B2A 0%, #162033 50%, #1a2744 100%);
+  --grad-accent: linear-gradient(90deg, #0D1B2A, #4F6EF7, #38BDF8);
+  --grad-cta: #4F6EF7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Marquee ──────────────────────────────── */
 @keyframes marquee {
   0% {
     transform: translateX(0%);
@@ -13,32 +70,20 @@
 
 .animate-marquee {
   display: inline-flex;
-  animation: marquee 15s linear infinite;
+  animation: marquee 20s linear infinite;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-:root {
-  scroll-padding-top: 7rem;
-
-}
-
-/* 🔥 Hide scrollbar but keep scrolling */
+/* ── Hide scrollbar ────────────────────────── */
 .hide-scrollbar {
   -ms-overflow-style: none;
-  /* IE and Edge */
   scrollbar-width: none;
-  /* Firefox */
 }
 
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
-  /* Chrome, Safari, Opera */
 }
 
-
+/* ── Acceternity infinite scroll ──────────── */
 @theme inline {
   --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
 
@@ -47,4 +92,44 @@ html {
       transform: translate(calc(-50% - 0.5rem));
     }
   }
+}
+
+/* ── Section divider ───────────────────────── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #E2E8F0, transparent);
+  margin: 0 auto;
+  width: 80%;
+}
+
+/* ── Reusable card style ───────────────────── */
+.card-base {
+  background: var(--c-card);
+  border: 1px solid var(--c-border);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card-base:hover {
+  box-shadow: var(--shadow-hover);
+  border-color: var(--c-indigo);
+  transform: translateY(-4px);
+}
+
+/* ── CTA Button ────────────────────────────── */
+.btn-primary {
+  background: var(--c-indigo);
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-btn);
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--c-indigo-dark);
+  box-shadow: 0 6px 20px rgba(79, 110, 247, 0.45);
+  transform: translateY(-1px) scale(1.02);
 }
