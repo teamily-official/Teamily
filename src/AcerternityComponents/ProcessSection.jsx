@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-// eslint-disable-next-line no-unused-vars
 import {
   AnimatePresence,
   useMotionValueEvent,
@@ -14,101 +13,106 @@ export const ProcessSection = ({ content, contentClassName }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     container: ref,
-    offset: ["start start", "end end"], // span full scroll of container
+    offset: ["start start", "end end"],
   });
   const cardLength = content.length;
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     const segment = 1 / cardLength;
-    const index = Math.min(Math.floor(latest / segment), cardLength - 1);
-    setActiveCard(index);
+    setActiveCard(Math.min(Math.floor(latest / segment), cardLength - 1));
   });
 
-  const backgroundColors = ["#274990", "#151F5F", "#274990", "#151F5F"];
-
-  const linearGradients = [
-    "linear-gradient(to bottom right, #06b6d4, #10b981)",
-    "linear-gradient(to bottom right, #ec4899, #6366f1)",
-    "linear-gradient(to bottom right, #f97316, #eab308)",
-  ];
-
-  const [, setBackgroundGradient] = useState(linearGradients[0]);
-
-  useEffect(() => {
-    setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
-  }, [activeCard]);
+  // Midnight navy — alternating slightly between two shades
+  const backgroundColors = ["#0D1B2A", "#111f35", "#0D1B2A", "#111f35"];
 
   return (
-    <div>
-      <h2 className="text-4xl text-center sm:text-5xl font-bold text-gray-900 my-12 transition-transform duration-300 hover:scale-105">
-        Our 6-Step Workflow
-      </h2>
+    <div style={{ background: "var(--c-bg)" }} className="py-4">
+      {/* Section heading */}
+      <div className="text-center px-4 mb-2">
+        <div
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-4"
+          style={{ background: "var(--c-hover-bg)", color: "var(--c-indigo)" }}
+        >
+          How We Work
+        </div>
+        <h2
+          className="text-4xl sm:text-5xl font-bold"
+          style={{ color: "var(--c-text-head)" }}
+        >
+          Our 6-Step Workflow
+        </h2>
+        <p className="mt-3 text-lg mb-10" style={{ color: "var(--c-text-body)" }}>
+          A proven process from idea to delivery.
+        </p>
+      </div>
 
       <motion.div
-        animate={{
-          backgroundColor:
-            backgroundColors[activeCard % backgroundColors.length],
-        }}
-        className="relative flex h-[40rem] justify-evenly space-x-10 overflow-y-auto rounded p-12 flex-col lg:flex-row"
+        animate={{ backgroundColor: backgroundColors[activeCard % backgroundColors.length] }}
+        transition={{ duration: 0.5 }}
+        className="relative flex h-[40rem] justify-evenly overflow-y-auto rounded-2xl p-10 flex-col lg:flex-row mx-4 lg:mx-10"
         ref={ref}
       >
-        {/* Text Section */}
-        <div className="relative flex items-center justify-center lg:items-start lg:justify-start px-4 text-center lg:text-left  hide-scrollbar scroll-smooth">
-          <div className="max-w-2xl">
+        {/* Step number indicator dots */}
+        <div className="absolute top-5 left-0 right-0 flex justify-center gap-2 z-10">
+          {content.map((_, i) => (
+            <div
+              key={i}
+              className="w-2 h-2 rounded-full transition-all duration-300"
+              style={{
+                background: activeCard === i ? "var(--c-sky)" : "rgba(255,255,255,0.2)",
+                transform: activeCard === i ? "scale(1.4)" : "scale(1)",
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Text column */}
+        <div className="relative flex items-center justify-center lg:items-start lg:justify-start px-4 text-center lg:text-left hide-scrollbar">
+          <div className="max-w-sm">
             {content.map((item, index) => (
               <div key={item.title + index} className="my-20">
                 <motion.span
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: activeCard === index ? 1 : 0.3 }}
-                  className="text-3xl max-w-sm text-slate-300"
+                  animate={{ opacity: activeCard === index ? 1 : 0.2 }}
+                  className="text-4xl font-black"
+                  style={{ color: "var(--c-sky)" }}
                 >
-                  {item.id}.
+                  0{item.id}
                 </motion.span>
                 <motion.h2
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: activeCard === index ? 1 : 0.3 }}
-                  className="text-3xl font-bold text-slate-100 inline px-2"
+                  animate={{ opacity: activeCard === index ? 1 : 0.2 }}
+                  className="text-3xl font-bold text-white mt-1"
                 >
                   {item.title}
                 </motion.h2>
-
                 <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: activeCard === index ? 1 : 0.3 }}
-                  className="text-kg mt-10 max-w-sm text-slate-300 mx-auto lg:mx-0"
+                  animate={{ opacity: activeCard === index ? 1 : 0.2 }}
+                  className="text-base mt-4 leading-relaxed"
+                  style={{ color: "#94A3B8" }}
                 >
                   {item.description}
                 </motion.p>
               </div>
             ))}
-            <div className="h-40" />
+            <div className="h-32" />
           </div>
         </div>
 
-        <div
-          className={cn(
-            "sticky top-1 max-h-max w-2xl overflow-hidden  lg:block",
-            contentClassName
-          )}
-        >
+        {/* Sticky image */}
+        <div className={cn("sticky top-4 max-h-max w-2xl overflow-hidden lg:block", contentClassName)}>
           <AnimatePresence mode="wait">
             <motion.img
               key={activeCard}
               src={content[activeCard].icon}
               alt={content[activeCard].title}
-              className="w-full h-full object-cover rounded-4xl"
-              initial={{ opacity: 0, x: 80, scale: 0.95 }}
+              loading="lazy"
+              className="w-full h-full object-cover rounded-3xl"
+              style={{ border: "1px solid rgba(79,110,247,0.2)" }}
+              initial={{ opacity: 0, x: 60, scale: 0.95 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
-              exit={{ opacity: 0.8, x: 80, scale: 0.95 }}
+              exit={{ opacity: 0, x: 60, scale: 0.95 }}
               transition={{ duration: 0.3, ease: [0.42, 0, 0.58, 1] }}
             />
           </AnimatePresence>
-
-          {content[activeCard].content && (
-            <div className="absolute bottom-2 left-2 p-2 bg-white bg-opacity-70 rounded">
-              {content[activeCard].content}
-            </div>
-          )}
         </div>
       </motion.div>
     </div>

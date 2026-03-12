@@ -1,4 +1,3 @@
-
 import { cn } from "../../lib/utils.js";
 import React, { useEffect, useState } from "react";
 
@@ -7,81 +6,104 @@ export const LogoSection = ({
   direction = "left",
   speed = "",
   pauseOnHover = true,
-  className
+  className,
 }) => {
   const containerRef = React.useRef(null);
   const scrollerRef = React.useRef(null);
+  const [start, setStart] = useState(false);
 
   useEffect(() => {
     addAnimation();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const [start, setStart] = useState(false);
+
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
-      const scrollerContent = Array.from(scrollerRef.current.children);
-
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true);
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem);
-        }
+      Array.from(scrollerRef.current.children).forEach((item) => {
+        scrollerRef.current.appendChild(item.cloneNode(true));
       });
-
       getDirection();
       getSpeed();
       setStart(true);
     }
   }
+
   const getDirection = () => {
-    if (containerRef.current) {
-      if (direction === "left") {
-        containerRef.current.style.setProperty("--animation-direction", "forwards");
-      } else {
-        containerRef.current.style.setProperty("--animation-direction", "reverse");
-      }
-    }
+    containerRef.current?.style.setProperty(
+      "--animation-direction",
+      direction === "left" ? "forwards" : "reverse"
+    );
   };
+
   const getSpeed = () => {
-    if (containerRef.current) {
-      if (speed === "fast") {
-        containerRef.current.style.setProperty("--animation-duration", "20s");
-      } else if (speed === "normal") {
-        containerRef.current.style.setProperty("--animation-duration", "40s");
-      } else {
-        containerRef.current.style.setProperty("--animation-duration", "80s");
-      }
-    }
+    const dur = speed === "fast" ? "20s" : speed === "normal" ? "40s" : "80s";
+    containerRef.current?.style.setProperty("--animation-duration", dur);
   };
+
   return (
+    <div style={{ background: "var(--c-bg)" }} className="py-6">
+      {/* Heading */}
+      <div className="text-center mb-10 px-4">
+        <div
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-4"
+          style={{ background: "var(--c-hover-bg)", color: "var(--c-indigo)" }}
+        >
+          Tech Stack
+        </div>
+        <h2 className="text-4xl sm:text-5xl font-bold" style={{ color: "var(--c-text-head)" }}>
+          Our Development Stack
+        </h2>
+        <p className="mt-3 text-lg" style={{ color: "var(--c-text-body)" }}>
+          Modern tools for modern solutions.
+        </p>
+      </div>
 
-    <div className="">
-<h1 className="relative z-10 text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-900 mb-12 transition-transform duration-300 hover:scale-105 my-10 py-15">
-        Our Development Stack
-      </h1>
-    <div
-      ref={containerRef}
-      className={cn(
-        "scroller relative z-20 max-w-full overflow-hidden my-3 backdrop-blur-3xl bg-blue-200/20",
-        className
-      )}>
-        
-      <ul
-        ref={scrollerRef}
-        className={cn(
-          "flex w-max min-w-full shrink-0 flex-nowrap gap-4 py-4 ",
-          start && "animate-scroll",
-          pauseOnHover && "hover:[animation-play-state:paused]"
-        )}>
-        {items.map((item, idx) => (
-          <img
-          src={item.src}
-            className=" relative w-full h-46  shrink-0 rounded-2xl  bg-white px-8 py-6 md:w-[350px] cursor-pointer  shadow-lg shadow-blue-300 "
-            key={idx}  > 
-          </img>
-        ))}
-      </ul>
+      {/* Marquee track */}
+      <div
+        ref={containerRef}
+        className={cn("scroller relative z-20 max-w-full overflow-hidden", className)}
+      >
+        <ul
+          ref={scrollerRef}
+          className={cn(
+            "flex w-max min-w-full shrink-0 flex-nowrap gap-5 py-4 px-4",
+            start && "animate-scroll",
+            pauseOnHover && "hover:[animation-play-state:paused]"
+          )}
+        >
+          {items.map((item, idx) => (
+            <li
+              key={idx}
+              className="relative shrink-0 flex flex-col items-center justify-center gap-3
+                rounded-2xl px-8 py-5 transition-all duration-300 cursor-pointer group"
+              style={{
+                background: "var(--c-card)",
+                border: "1px solid var(--c-border)",
+                boxShadow: "var(--shadow-card)",
+                minWidth: "160px",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = "var(--c-indigo)";
+                e.currentTarget.style.boxShadow = "var(--shadow-hover)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = "var(--c-border)";
+                e.currentTarget.style.boxShadow = "var(--shadow-card)";
+              }}
+            >
+              <img
+                src={item.src}
+                alt={item.alt}
+                loading="lazy"
+                className="h-12 w-auto object-contain"
+              />
+              <span className="text-xs font-medium" style={{ color: "var(--c-text-body)" }}>
+                {item.alt}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
-    </div>
-
   );
 };

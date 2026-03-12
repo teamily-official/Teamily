@@ -1,4 +1,3 @@
-"use client";
 import { useState, useEffect } from "react";
 import logo from "../../public/Logo/TeamilyLogo.png";
 
@@ -8,59 +7,58 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const toggleMobileMenu = () => {
-    setMobileOpen(!mobileOpen);
-  };
+  const toggleMobileMenu = () => setMobileOpen((prev) => !prev);
 
-  // Detect scroll
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header className="w-full fixed top-0 left-0 z-50 ">
+    <header className="w-full fixed top-0 left-0 z-50">
       <div
-        className={`px-2 py-2 sm:px-4 lg:px-6 xl:px-8 bg- ${
-          scrolled ? "backdrop-blur-3xl backface-visible" : ""
-        } `}
+        style={{
+          background: scrolled ? "rgba(13,27,42,0.75)" : "transparent",
+          backdropFilter: scrolled ? "blur(16px)" : "none",
+          WebkitBackdropFilter: scrolled ? "blur(16px)" : "none",
+          borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "none",
+          transition: "all 0.35s ease",
+        }}
+        className="px-4 py-3 sm:px-6 lg:px-10"
       >
-        <div className="h-fit flex items-center justify-between gap-2  ">
+        <div className="flex items-center justify-between gap-2 max-w-7xl mx-auto">
+
           {/* Logo */}
-          <div className="w-16 md:w-18 ">
-            <img
-              src={logo}
-              alt="Logo"
-              className="w-full h-full cursor-pointer"
-            />
+          <div className="w-14 md:w-16 flex-shrink-0">
+            <img src={logo} alt="Teamily Logo" className="w-full h-auto cursor-pointer" />
           </div>
 
-          {/* Desktop Nav - only this gets blur on scroll */}
+          {/* Desktop Nav pill */}
           <nav
-            className="hidden md:flex gap-2 xl:gap-5 text-[1.2rem] 2xl:text-[1.1vw]
-             px-6 py-2 
-            xl:px-10  rounded-3xl transition-all duration-300 
-            bg-gradient-to-r from-[#151F5F] via-[#274990] to-[#3CAAE7] 
-            backdrop-blur-3xl"
+            className="hidden md:flex items-center gap-1 xl:gap-2
+              px-5 py-2 xl:px-8 rounded-full
+              border border-white/15
+              bg-gradient-to-r from-[#0D1B2A]/90 via-[#4F6EF7]/80 to-[#38BDF8]/75
+              backdrop-blur-xl shadow-lg"
           >
             {navItems.map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="font-mono text-white mx-1 xl:mx-3"
+                className="text-white/80 hover:text-white text-[0.95rem] xl:text-base
+                  font-medium mx-2 xl:mx-3 transition-colors duration-200
+                  hover:drop-shadow-[0_0_6px_rgba(56,189,248,0.6)]"
               >
                 {item}
               </a>
             ))}
           </nav>
 
+          {/* CTA Button */}
           <div className="hidden sm:block">
             <button
-              className="font-mono text-[1rem] 2xl:text-[1.1vw] px-4 md:px-6 py-2 
-    xl:px-10 rounded-md text-white bg-gradient-to-r from-[#151F5F] via-[#274990] to-[#3CAAE7] whitespace-nowrap"
+              className="btn-primary text-sm xl:text-base px-5 xl:px-7"
               onClick={() =>
                 window.open(
                   "https://forms.zohopublic.in/teamilyofficialzoho1/form/ContactUs/formperma/1P9DiLkxIiUgw_urpS6C7d8ATYzEZMINvxTIhXtN0r0",
@@ -68,27 +66,23 @@ export function Header() {
                 )
               }
             >
-              Get Contact
+              Get In Touch
             </button>
           </div>
 
-          {/* Hamburger for mobile */}
+          {/* Mobile hamburger */}
           <button
-            className="sm:hidden text-[#151F5F] focus:outline-none cursor-pointer"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            className="sm:hidden p-2 rounded-lg text-white transition-colors"
+            style={{ background: "rgba(79,110,247,0.15)" }}
             onClick={toggleMobileMenu}
           >
-            <svg
-              className="w-8 h-8"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {mobileOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
             </svg>
           </button>
         </div>
@@ -96,38 +90,47 @@ export function Header() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="sm:hidden shadow-md w-full h-screen backdrop-blur-2xl bg-white/20 absolute top-24 left-0">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <ul className="flex flex-col items-center py-4 gap-4">
-              {navItems.map((item) => (
-                <div
-                  key={item}
-                  className="w-full text-center hover:backdrop-blur-2xl hover:bg-white/20 rounded-2xl"
-                >
-                  <a
-                    href={`#${item.toLowerCase()}`}
-                    className="text-blue-600 font-semibold text-2xl hover:text-blue-800 block my-2"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {item}
-                  </a>
-                </div>
-              ))}
-              <li>
-                <button
-                  className="bg-blue-900 text-white px-6 py-2 rounded-md hover:bg-blue-800 cursor-pointer"
-                  onClick={() =>
-                    window.open(
-                      "https://forms.zohopublic.in/teamilyofficialzoho1/form/ContactUs/formperma/1P9DiLkxIiUgw_urpS6C7d8ATYzEZMINvxTIhXtN0r0",
-                      "_blank"
-                    )
+        <div
+          className="sm:hidden w-full min-h-screen absolute top-[64px] left-0"
+          style={{
+            background: "rgba(13,27,42,0.97)",
+            backdropFilter: "blur(24px)",
+          }}
+        >
+          <ul className="flex flex-col items-center py-10 gap-2 px-6">
+            {navItems.map((item) => (
+              <li key={item} className="w-full">
+                <a
+                  href={`#${item.toLowerCase()}`}
+                  onClick={() => setMobileOpen(false)}
+                  className="block text-center text-white/80 hover:text-white text-xl font-medium
+                    py-4 rounded-2xl transition-all duration-200"
+                  style={{ background: "rgba(79,110,247,0.0)" }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.background = "rgba(79,110,247,0.12)")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.background = "rgba(79,110,247,0.0)")
                   }
                 >
-                  Get Contact
-                </button>
+                  {item}
+                </a>
               </li>
-            </ul>
-          </div>
+            ))}
+            <li className="mt-6 w-full flex justify-center">
+              <button
+                className="btn-primary w-full max-w-xs"
+                onClick={() =>
+                  window.open(
+                    "https://forms.zohopublic.in/teamilyofficialzoho1/form/ContactUs/formperma/1P9DiLkxIiUgw_urpS6C7d8ATYzEZMINvxTIhXtN0r0",
+                    "_blank"
+                  )
+                }
+              >
+                Get In Touch
+              </button>
+            </li>
+          </ul>
         </div>
       )}
     </header>

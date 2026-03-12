@@ -1,40 +1,77 @@
 export default function FeatureSection() {
   const features = [
     {
+      icon: "🏆",
+      label: "Excellence",
       title: "Expertise You Can Trust",
       desc: "With years of experience and a skilled team, we deliver solutions that combine creativity, precision, and industry best practices to help your business succeed.",
     },
     {
+      icon: "💡",
+      label: "Innovation",
       title: "Innovative Solutions",
-      desc: "“We harness the latest technologies and creative strategies to provide forward-thinking solutions that keep your business ahead in a constantly evolving digital world.",
+      desc: "We harness the latest technologies and creative strategies to provide forward-thinking solutions that keep your business ahead in a constantly evolving digital world.",
     },
     {
+      icon: "🤝",
+      label: "Partnership",
       title: "Client-Centric Approach",
       desc: "Your goals are our priority. From clear communication to timely delivery, we ensure every project is tailored to meet your unique needs and drive real results.",
     },
-    
   ];
 
   return (
-    <section className="bg-gray-50 py-20 px-6">
-      <div className="max-w-7xl w-full mx-auto text-center">
-        <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-14 transition-transform duration-300 hover:scale-105">
+    <section style={{ background: "var(--c-bg)" }} className="py-24 px-6">
+      <div className="max-w-6xl mx-auto text-center">
+        {/* Eyebrow */}
+        <div
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-5"
+          style={{ background: "var(--c-hover-bg)", color: "var(--c-indigo)" }}
+        >
+          Why Teamily
+        </div>
+        <h2
+          className="text-4xl sm:text-5xl font-bold mb-3"
+          style={{ color: "var(--c-text-head)" }}
+        >
           Why Choose Teamily?
         </h2>
+        <p className="text-lg mb-14" style={{ color: "var(--c-text-body)" }}>
+          Built on trust, powered by innovation.
+        </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-25 justify-items-center  ">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, i) => (
-            <div
-              key={i}
-              className="p-6 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700
-                         text-white rounded-2xl shadow-lg border border-transparent
-                         transform transition-all duration-300 hover:-translate-y-2
-                         hover:shadow-2xl hover:border-white w-full sm:w-80 md:w-72 lg:w-80 xl:w-96 2xl:w-[22vw]"
-            >
-              <h3 className="text-xl sm:text-2xl md:text-[1.4rem] font-semibold mb-3 text-center">
+            <div key={i} className="card-base p-8 text-left relative overflow-hidden group">
+              {/* Top gradient accent */}
+              <div
+                className="absolute top-0 left-0 right-0 h-[3px] rounded-t-[20px]"
+                style={{ background: "var(--grad-accent)" }}
+              />
+
+              {/* Icon badge */}
+              <div
+                className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-5"
+                style={{ background: "var(--c-hover-bg)" }}
+              >
+                {feature.icon}
+              </div>
+
+              {/* Label */}
+              <span
+                className="text-xs font-bold uppercase tracking-widest"
+                style={{ color: "var(--c-indigo)" }}
+              >
+                {feature.label}
+              </span>
+
+              <h3
+                className="text-xl font-bold mt-2 mb-3 transition-colors duration-300 group-hover:text-[var(--c-indigo)]"
+                style={{ color: "var(--c-text-head)" }}
+              >
                 {feature.title}
               </h3>
-              <p className="text-white text-sm sm:text-base md:text-[1rem] text-center leading-relaxed">
+              <p className="text-sm leading-relaxed" style={{ color: "var(--c-text-body)" }}>
                 {feature.desc}
               </p>
             </div>
