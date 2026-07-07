@@ -2,9 +2,17 @@ import { cn } from "../../lib/utils";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+const slugify = (text) => 
+  text.toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)+/g, '');
 
 export const ServiceSection = ({ items, className }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const navigate = useNavigate();
 
   return (
     <div
@@ -18,7 +26,7 @@ export const ServiceSection = ({ items, className }) => {
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
-          <Card>
+          <Card onClick={() => navigate(`/services/${slugify(item.title)}`)}>
             <CardImage>{item.image}</CardImage>
             <CardTitle>{item.title}</CardTitle>
 
@@ -28,10 +36,16 @@ export const ServiceSection = ({ items, className }) => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.25 }}
-                className="absolute inset-0 flex items-center justify-center p-6 rounded-3xl"
-                style={{ background: "rgba(13,27,42,0.88)", backdropFilter: "blur(8px)" }}
+                className="absolute inset-0 flex flex-col items-center justify-center p-6 rounded-3xl text-center"
+                style={{ background: "rgba(13, 27, 42, 0.94)", backdropFilter: "blur(10px)" }}
               >
                 <CardDescription>{item.description}</CardDescription>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-[#38BDF8] uppercase tracking-widest">
+                  View Details &amp; Tech Stack
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </span>
               </motion.div>
             )}
           </Card>
@@ -41,8 +55,9 @@ export const ServiceSection = ({ items, className }) => {
   );
 };
 
-export const Card = ({ className, children }) => (
+export const Card = ({ className, children, onClick }) => (
   <motion.div
+    onClick={onClick}
     whileHover={{ scale: 1.03 }}
     transition={{ type: "spring", stiffness: 220, damping: 18 }}
     className={cn(
