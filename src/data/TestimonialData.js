@@ -1,0 +1,20 @@
+export const testimonialData = [
+  {
+    name: "Alex Rivera",
+    role: "CEO, TechFlow",
+    content: "Teamily transformed our vision into a stunning reality. Their expertise in custom software is unmatched.",
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex",
+  },
+  {
+    name: "Sarah Jenkins",
+    role: "Founder, Bloom Digital",
+    content: "Working with Teamily was a game-changer. Our web traffic increased by 200% after the redesign.",
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
+  },
+  {
+    name: "Michael Chen",
+    role: "CTO, CloudScale",
+    content: "The level of professionalism and technical depth at Teamily is rare. They are our go-to partner for all things IT.",
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Michael",
+  },
+];

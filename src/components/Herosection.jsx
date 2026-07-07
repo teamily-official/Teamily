@@ -60,7 +60,7 @@ const content = {
   micro: "From web and app development to ongoing maintenance, our expert team delivers solutions tailored for your business success.",
 };
 
-export default function HeroSection() {
+export default function HeroSection({ heading, subHeading }) {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -179,7 +179,7 @@ export default function HeroSection() {
           transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-[4.5rem] font-bold mb-5 leading-tight text-white"
         >
-          {content.Heading}
+          {heading || content.Heading}
         </motion.h1>
 
         <motion.p
@@ -189,7 +189,7 @@ export default function HeroSection() {
           className="text-base sm:text-lg md:text-xl max-w-2xl mb-9 leading-relaxed"
           style={{ color: "#CBD5E1" }}
         >
-          {content.subHeading}
+          {subHeading || content.subHeading}
         </motion.p>
 
         <motion.div

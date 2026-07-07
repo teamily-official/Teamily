@@ -1,8 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import Companylogo from "../../public/Logo/Teamily Footer.png";
 import { CompanyDetails, ContactDetails } from "../data/FooterSectionData";
 import { servicesContent } from "../data/ServiceData";
 
+const slugify = (text) => 
+  text.toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)+/g, '');
+
 export function Footer() {
+  const navigate = useNavigate();
+
   return (
     <footer style={{ background: "var(--c-navy)" }} className="w-full">
       {/* Top gradient accent bar */}
@@ -62,6 +71,7 @@ export function Footer() {
                 {servicesContent.map((item, index) => (
                   <li
                     key={index}
+                    onClick={() => navigate(`/services/${slugify(item.title)}`)}
                     className="text-sm cursor-pointer transition-colors duration-200 hover:text-white"
                     style={{ color: "var(--c-text-muted)" }}
                   >
@@ -111,7 +121,7 @@ export function Footer() {
             . All rights reserved.
           </p>
           <p className="text-xs" style={{ color: "#475569" }}>
-            Built with ❤️ for businesses worldwide.
+            Built with ❤️ for businesses worldwide. | <a href="/admin" className="hover:text-white transition-colors">Admin Login</a>
           </p>
         </div>
       </div>

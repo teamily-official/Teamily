@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import logo from "../../public/Logo/TeamilyLogo.png";
-
 const navItems = ["Home", "About", "Services", "Project"];
-
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  const isHomePage = location.pathname === "/";
 
   const toggleMobileMenu = () => setMobileOpen((prev) => !prev);
 
@@ -14,6 +16,17 @@ export function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const getNavLink = (item) => {
+    const id = item.toLowerCase();
+    if (isHomePage) {
+      if (item === "Home") return "#";
+      return `#${id}`;
+    } else {
+      if (item === "Home") return "/";
+      return `/#${id}`;
+    }
+  };
 
   return (
     <header className="w-full fixed top-0 left-0 z-50">
@@ -31,7 +44,9 @@ export function Header() {
 
           {/* Logo */}
           <div className="w-14 md:w-16 flex-shrink-0">
-            <img src={logo} alt="Teamily Logo" className="w-full h-auto cursor-pointer" />
+            <a href="/">
+              <img src={logo} alt="Teamily Logo" className="w-full h-auto cursor-pointer" />
+            </a>
           </div>
 
           {/* Desktop Nav pill */}
@@ -45,7 +60,7 @@ export function Header() {
             {navItems.map((item) => (
               <a
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={getNavLink(item)}
                 className="text-white/80 hover:text-white text-[0.95rem] xl:text-base
                   font-medium mx-2 xl:mx-3 transition-colors duration-200
                   hover:drop-shadow-[0_0_6px_rgba(56,189,248,0.6)]"
@@ -101,7 +116,7 @@ export function Header() {
             {navItems.map((item) => (
               <li key={item} className="w-full">
                 <a
-                  href={`#${item.toLowerCase()}`}
+                  href={getNavLink(item)}
                   onClick={() => setMobileOpen(false)}
                   className="block text-center text-white/80 hover:text-white text-xl font-medium
                     py-4 rounded-2xl transition-all duration-200"
